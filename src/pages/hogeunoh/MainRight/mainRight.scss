@@ -1,0 +1,97 @@
+.mainRightBox {
+    width: 293px;
+
+    .RightBoxIn {
+        width: 293px;
+        position: fixed;
+
+        .mypageBox {
+            height: 56px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 56px;
+                border-radius: 50%;
+                margin: 10px;
+            }
+
+            .mypageNameBox {
+                display: flex;
+                flex-direction: column;
+                font-size: 12px;
+                color: #8E8E8E;
+
+                .name {
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: black;
+                    margin-right: 5px;
+                }
+            }
+        }
+        
+        .myRecommendBox {
+            height: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+
+            .recommend {
+                font-size: 14px;
+                font-weight: bold;
+                color: #8E8E8E;
+            }
+            
+            .allview {
+                font-size: 12px;
+                font-weight: bold;
+                position: absolute;
+                right: 0;
+            }
+        }
+
+        .userRecommendBox{
+            .user {
+                height: 48px;
+                padding: 8px 16px;
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                img {
+                    width: 32px;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                }
+
+                .mypageNameBox {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 12px;
+                    color: #8E8E8E;
+
+                    .name {
+                        font-size: 14px;
+                        font-weight: bold;
+                        color: black;
+                        margin-right: 5px;
+                    }
+                }
+
+                .follow {
+                    font-size: 12px;
+                    font-weight: bold;
+                    color: #0095F6;
+                    position: absolute;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+
+
