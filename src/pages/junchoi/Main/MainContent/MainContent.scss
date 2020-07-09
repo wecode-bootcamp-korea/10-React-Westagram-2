@@ -1,0 +1,26 @@
+.main-content {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin-top: 85px;
+
+  .main-stories {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 580px;
+    height: 120px;
+    margin: 0px 28px 34px 0px;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(var(--b6a,219,219,219),1);
+    border-radius: 3px;
+    overflow: hidden;
+    overflow-x: scroll;
+    cursor: pointer;
+  }
+
+  .main-feeds {
+    width: 580px;
+    margin-right: 28px;
+  }
+} 
