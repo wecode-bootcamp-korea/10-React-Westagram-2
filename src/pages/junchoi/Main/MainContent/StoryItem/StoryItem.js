@@ -5,7 +5,7 @@ class Story extends Component {
   render() {
     const {thumbnail, userName} = this.props.story;
     return (
-      <div className="story-item">
+      <div className="StoryItem_J">
         <div className="story-image-border">
           <img src={thumbnail} alt="thumbnail"/>
         </div>

@@ -9,10 +9,10 @@
 
 body {
   margin: 0;
-  background-color: #FAFAFA;
+  // background-color: #FAFAFA;
 }
 
-.login-container {
+.Login_J {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,11 +58,11 @@ body {
       border-radius: 3px;
       font-size: 15px; 
       color: white;
-      /* pointer-events: none; */
+      pointer-events: none; 
       cursor: pointer; 
     }
 
-    button.on-login {
+    button.active {
       background-color: #0095F6;
       pointer-events: visible;
     }
@@ -76,5 +76,3 @@ body {
     cursor: pointer;
   }
 }
-
-

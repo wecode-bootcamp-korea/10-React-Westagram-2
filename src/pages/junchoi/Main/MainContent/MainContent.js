@@ -66,7 +66,7 @@ class MainContent extends Component {
     });
 
     return(
-      <div className="main-content">
+      <div className="MainContent_J">
         <div className="main-stories">
           {renderStories}
         </div>

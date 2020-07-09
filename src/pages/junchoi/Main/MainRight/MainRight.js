@@ -4,7 +4,7 @@ import './MainRight.scss';
 class MainRight extends Component {
   render() {
     return(
-      <div className="main-right">
+      <div className="MainRight_J">
         <div className="main-right-fixed">
           <div className="current-user">
             <img src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/68745795_414400975847569_3012539397703729152_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=IfkXLs7an6EAX-lceoS&oh=1a7bc2472e8de74a4c4657c6ee82b349&oe=5F215BC7"  alt="profile"/>

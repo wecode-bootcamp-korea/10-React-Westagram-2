@@ -2,20 +2,53 @@ import React, { Component } from 'react';
 import './Login.scss';
 
 class Login extends Component {
+  state = {buttonClass: '', idValue: '', pwValue: ''};
+
   onLoginButtonClick = () => {
-    console.log(this.props.history);
-    this.props.history.push('/main-junchoi');
+    const { idValue, pwValue } = this.state;
+    const isValid = idValue.length !== 0 && pwValue.length !== 0; 
+
+    if (isValid) this.props.history.push('/main-junchoi');
   }
 
+  onIdChange = (event) => {
+    this.setState({...this.state, idValue: event.target.value});
+  }
+
+  onPwChange = (event) => {
+    this.setState({...this.state, pwValue: event.target.value});
+  }
+
+  onInputBoxKeyUp = () => {
+    const { idValue, pwValue } = this.state;
+    const isValid = idValue.length !== 0 && pwValue.length !== 0; 
+
+    isValid 
+      ? this.setState({...this.state, buttonClass: 'active'}) 
+      : this.setState({...this.state, buttonClass: ''});
+  }
+  
   render() {
     return(
-      <div className="login-container">
+      <div className="Login_J">
         <div className="login-content">
         <img src="/images/junchoi/logo_text.png" alt="logo_text"/>
-        <div className="login-input-box">
-          <input className="id" type="text" placeholder="전화번호, 사용자 이름 또는 이메일" />
-          <input className="pw" type="password" placeholder="비밀번호"/>
-          <button onClick={this.onLoginButtonClick} >로그인</button>
+        <div className="login-input-box" onKeyUp={this.onInputBoxKeyUp}>
+          <input 
+            className="id" 
+            type="text" 
+            placeholder="전화번호, 사용자 이름 또는 이메일" 
+            value={this.state.idValue}
+            onChange={this.onIdChange}
+          />
+          <input 
+            className="pw" 
+            type="password" 
+            placeholder="비밀번호"
+            value={this.state.pwValue}
+            onChange={this.onPwChange}
+          />
+          <button className={`${this.state.buttonClass}`} onClick={this.onLoginButtonClick} >로그인</button>
         </div>
         <div className="login-pw-check">
           비밀번호를 잊으셨나요?

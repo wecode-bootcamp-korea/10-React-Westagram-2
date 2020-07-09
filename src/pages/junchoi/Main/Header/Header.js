@@ -4,7 +4,7 @@ import './Header.scss';
 class Header extends Component {
   render() {
     return(
-      <div className="header">
+      <div className="Header_J">
         <nav className="navbar">
           <div className="left">
             <img className="logo" src="/images/junchoi/logo_text.png" alt="logo_text"/>

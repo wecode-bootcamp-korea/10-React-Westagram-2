@@ -5,7 +5,7 @@ import Comment from './Comment/Comment';
 import './Feed.scss';
 
 class Feed extends Component {
-  state = { comments: this.props.feed.comments, commentInput: "" };
+  state = { comments: this.props.feed.comments, commentInput: "", postButtonClass: ""};
 
   onCommentFormSubmit = (event) => {
     event.preventDefault();
@@ -16,17 +16,19 @@ class Feed extends Component {
       userName,
       content: prevState.commentInput
     })}));
-    this.setState({...this.state, commentInput: ""});
+    this.setState({...this.state, commentInput: "", postButtonClass: ""});
   }
 
   onCommentChange = (event) => {
-    this.setState({...this.state, commentInput: event.target.value});
+    event.target.value 
+    ? this.setState({...this.state, commentInput: event.target.value, postButtonClass: "active"})
+    : this.setState({...this.state, commentInput: event.target.value, postButtonClass: ""});
   }
 
   render() {
     const { thumbnail, userName, likes, image, paragraph, hashes, comments } = this.props.feed;
     return (
-      <div className="feed">
+      <div className="Feed_J">
          <div className="head">
            <img src={thumbnail} alt="profile"/>
            <div className="id">{userName}</div>
@@ -52,7 +54,7 @@ class Feed extends Component {
           <div className="time">17시간 전</div>
           <form className="comment-input-box" onSubmit={this.onCommentFormSubmit}>
             <input className="text" placeholder="댓글 달기..." value={this.state.commentInput} onChange={this.onCommentChange}/>
-            <button type="submit" className="post">게시</button>
+            <button type="submit" className={`post ${this.state.postButtonClass}`}>게시</button>
           </form >
       </div>
     );

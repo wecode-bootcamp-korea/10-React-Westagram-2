@@ -8,7 +8,7 @@ import MainRight from './MainRight/MainRight';
 class Main extends Component {
   render() {
     return (
-      <div className="main-container">
+      <div className="Main_J">
         <Header />
         <div className="main-contents">
           <MainContent />
