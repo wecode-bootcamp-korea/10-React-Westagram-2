@@ -6,12 +6,12 @@ import Feed from "../Feed/feed";
 import MainRight from "../MainRight/mainRight";
 import "./Main.scss"
 
-class HoMain extends React.Component {
+class Main extends React.Component {
     render() {
         return (
             <div>
                 <Nav />
-                <div className="mainBox">
+                <div className="main_ho">
                     <Feed />
                     <MainRight />
                 </div>
@@ -20,4 +20,4 @@ class HoMain extends React.Component {
     }
 }
 
-export default HoMain;
+export default Main;

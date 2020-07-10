@@ -4,7 +4,7 @@ import "./nav.scss"
 class Nav extends React.Component {
     render() {
         return(
-            <nav>
+            <nav className="nav_ho">
                 <div className="headerBox">
                     <div className="logoBox">
                         <img className="logoImg" alt="logo" src="/images/hogeunoh/logo_text.png"/>

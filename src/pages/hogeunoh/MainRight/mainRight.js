@@ -4,7 +4,7 @@ import "./mainRight.scss"
 class MainRight extends React.Component {
     render() {
         return (
-            <div className="mainRightBox">
+            <div className="mainRight_ho">
                 <div className="RightBoxIn">
                     <div className="mypageBox">
                         <img alt="profile" src="/images/hogeunoh/다운로드.jpg" />

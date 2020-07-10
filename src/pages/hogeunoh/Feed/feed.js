@@ -4,7 +4,7 @@ import "./feed.scss"
 class Feed extends React.Component {
     render() {
         return (
-            <div className="mainLeftBox">
+            <div className="feed_ho">
                 <div className="storyBox">
                     <div className="story">
                         <div className="gradation">
