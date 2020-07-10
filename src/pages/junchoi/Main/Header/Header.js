@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import './Header.scss';
 
 class Header extends Component {
+  state = { searchbarInputValue: "", searchBarFocused: false } 
+
+  onSearchBarChange = (event) => {
+    this.setState({searchbarInputValue: event.target.value}); 
+  }
+
   render() {
     return(
       <div className="Header_J">
@@ -10,9 +16,23 @@ class Header extends Component {
             <img className="logo" src="/images/junchoi/logo_text.png" alt="logo_text"/>
           </div>
           <form className="searchbar">
-            <i className="tiny search icon"></i>
-            <span className="text">검색</span>
-            <input id="searchbar" type="text" />
+            <i 
+              className={`tiny search icon ${this.state.searchBarFocused ? "focused" : ""}`}
+            >
+            </i>
+            <span 
+              className={`text ${this.state.searchBarFocused ? "focused" : ""}`}
+            >
+              검색
+            </span>
+            <input 
+              id="searchbar" 
+              type="text" 
+              value={this.state.searchbarInputValue} 
+              onChange={this.onSearchBarChange} 
+              onFocus={() => this.setState({searchBarFocused: true})}
+              onBlur={() => this.setState({searchbarInputValue: "", searchBarFocused: false})}
+            />
           </form>
           <div className="icons">
             <div className="fixed"></div>
