@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Aside extends Component {
   render() {
     return (
-      <aside>
+      <aside className="aside_LYS">
         <div className="main_right">
           <div className="sidebar_profile">
             <div className="sidebar_img_radius">

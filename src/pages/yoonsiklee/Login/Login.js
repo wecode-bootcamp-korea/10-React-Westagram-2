@@ -7,9 +7,10 @@ class Login extends Component {
   goToMain() {
     this.props.history.push("/main-yoonsiklee");
   }
+
   render() {
     return (
-      <>
+      <div className="Login_LYS">
         <Nav />
         <div className="Login">
           <div className="container">
@@ -37,7 +38,7 @@ class Login extends Component {
             </section>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }

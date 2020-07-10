@@ -1,222 +1,224 @@
-.main {
-  display: flex;
-  justify-content: center;
-
-  article {
+.Main_LYS {
+  .main {
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    justify-content: center;
 
-    .feeds {
-      width: 612px;
-      margin-right: 35px;
-      margin-top: 70px;
-      border: 1px solid rgb(200, 200, 200);
+    .article_lys {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
 
-      .feeds-header {
-        display: flex;
-        align-items: center;
-        padding: 5px;
+      .feeds {
+        width: 612px;
+        margin-right: 35px;
+        margin-top: 70px;
+        border: 1px solid rgb(200, 200, 200);
 
-        .feeds-header-image {
-          width: 40px;
-          margin: 5px 15px 5px;
-          border: 1px solid black;
-          border-radius: 50%;
-          outline: none;
-        }
-      }
-
-      .feeds-main-image {
-        width: 610px;
-      }
-
-      .feeds-text {
-        padding: 15px 15px 0 15px;
-        display: flex;
-        flex-direction: column;
-
-        .feeds-text-name {
-          color: gray;
-        }
-        .feeds-text-time {
-          color: gray;
-        }
-      }
-
-      .feeds-icon-container {
-        display: flex;
-        align-items: center;
-        padding: 10px;
-
-        .feeds-icon {
-          width: 30px;
-          margin-left: 7px;
-        }
-
-        .feeds-icon-right {
-          margin-left: auto;
-          margin-right: 14px;
-        }
-      }
-      .comment-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 40px;
-        border-top: 1px solid rgb(200, 200, 200);
-
-        .comment {
-          width: 560px;
-          font-size: 15px;
-          border: none;
-          resize: none;
+        .feeds-header {
+          display: flex;
+          align-items: center;
           padding: 5px;
-          color: rgb(142, 142, 142);
-          margin-left: 8px;
+
+          .feeds-header-image {
+            width: 40px;
+            margin: 5px 15px 5px;
+            border: 1px solid black;
+            border-radius: 50%;
+            outline: none;
+          }
         }
-        .comment-button {
-          all: unset;
-          font-size: 15px;
-          font-weight: bold;
-          color: rgb(192, 225, 253);
-          cursor: pointer;
-          margin-right: 17px;
+
+        .feeds-main-image {
+          width: 610px;
+        }
+
+        .feeds-text {
+          padding: 15px 15px 0 15px;
+          display: flex;
+          flex-direction: column;
+
+          .feeds-text-time {
+            color: gray;
+          }
+
+          .feeds-text-name {
+            color: gray;
+          }
+        }
+
+        .feeds-icon-container {
+          display: flex;
+          align-items: center;
+          padding: 10px;
+
+          .feeds-icon {
+            width: 30px;
+            margin-left: 7px;
+          }
+
+          .feeds-icon-right {
+            margin-left: auto;
+            margin-right: 14px;
+          }
+        }
+        .comment-container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: 40px;
+          border-top: 1px solid rgb(200, 200, 200);
+
+          .comment {
+            width: 560px;
+            font-size: 15px;
+            border: none;
+            resize: none;
+            padding: 5px;
+            color: rgb(142, 142, 142);
+            margin-left: 8px;
+          }
+          .comment-button {
+            all: unset;
+            font-size: 15px;
+            font-weight: bold;
+            color: rgb(192, 225, 253);
+            cursor: pointer;
+            margin-right: 17px;
+          }
         }
       }
     }
-  }
 
-  aside {
-    margin-top: 75px;
-    width: 290px;
+    .aside_LYS {
+      margin-top: 75px;
+      width: 290px;
 
-    .main_right {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-
-      .sidebar_profile {
-        display: flex;
-        align-items: center;
-
-        .sidebar_img_radius img {
-          width: 55px;
-          border-radius: 70%;
-          margin-right: 10px;
-        }
-      }
-      .sidebar_profile_id_contaner {
+      .main_right {
+        width: 100%;
         display: flex;
         flex-direction: column;
 
-        .sidebar_profile_name,
-        .sidebar_profile_id {
-          text-decoration: none;
-          color: black;
+        .sidebar_profile {
+          display: flex;
+          align-items: center;
+
+          .sidebar_img_radius img {
+            width: 55px;
+            border-radius: 70%;
+            margin-right: 10px;
+          }
         }
-
-        .sidebar_profile_name {
-          color: #8e8e8e;
-          padding-top: 2px;
-        }
-      }
-
-      .story {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 20px;
-        padding-bottom: 13px;
-
-        .story_msg {
-          font-size: 13px;
-          font-weight: 600;
-          color: #8e8e8e;
-        }
-        .view_all a {
-          font-size: 13px;
-          font-weight: bold;
-          color: #262626;
-          text-decoration: none;
-        }
-      }
-
-      .follow_profile {
-        display: flex;
-        align-items: center;
-        position: relative;
-        padding: 3px 0;
-
-        .title_img_radius img {
-          height: 40px;
-          border-radius: 70%;
-        }
-
-        .follow_form {
+        .sidebar_profile_id_contaner {
           display: flex;
           flex-direction: column;
-          margin-left: 10px;
+
+          .sidebar_profile_name,
+          .sidebar_profile_id {
+            text-decoration: none;
+            color: black;
+          }
 
           .sidebar_profile_name {
             color: #8e8e8e;
             padding-top: 2px;
           }
+        }
 
-          .follow_id {
-            font-weight: bold;
-            color: black;
+        .story {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-top: 20px;
+          padding-bottom: 13px;
+
+          .story_msg {
+            font-size: 13px;
+            font-weight: 600;
+            color: #8e8e8e;
           }
-
-          .follow_id,
-          .follow_subid {
-            font-size: 12px;
+          .view_all a {
+            font-size: 13px;
+            font-weight: bold;
+            color: #262626;
             text-decoration: none;
           }
         }
-        .follow_btn {
-          position: absolute;
-          right: 0px;
-          top: 17px;
-        }
 
-        .follow_btn button {
-          all: unset;
-          font-size: 12px;
-          font-weight: 600;
-          cursor: pointer;
-          color: #0095f6;
-        }
-      }
-      .footer_site {
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 0;
+        .follow_profile {
+          display: flex;
+          align-items: center;
+          position: relative;
+          padding: 3px 0;
 
-        .footer_list {
+          .title_img_radius img {
+            height: 40px;
+            border-radius: 70%;
+          }
+
+          .follow_form {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+
+            .sidebar_profile_name {
+              color: #8e8e8e;
+              padding-top: 2px;
+            }
+
+            .follow_id {
+              font-weight: bold;
+              color: black;
+            }
+
+            .follow_id,
+            .follow_subid {
+              font-size: 12px;
+              text-decoration: none;
+            }
+          }
+          .follow_btn {
+            position: absolute;
+            right: 0px;
+            top: 17px;
+          }
+
+          .follow_btn button {
+            all: unset;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            color: #0095f6;
+          }
+        }
+        .footer_site {
           list-style: none;
-          padding-left: 6px;
-        }
-        .footer_list a {
-          width: 100%;
-          letter-spacing: -0.5px;
-          font-size: 10px;
-          color: #c7c7c7;
-        }
-      }
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          padding: 0;
 
-      .footer_text {
-        font-size: 13px;
-        color: #c7c7c7;
-        letter-spacing: -0.5px;
+          .footer_list {
+            list-style: none;
+            padding-left: 6px;
+          }
+          .footer_list a {
+            width: 100%;
+            letter-spacing: -0.5px;
+            font-size: 10px;
+            color: #c7c7c7;
+          }
+        }
+
+        .footer_text {
+          font-size: 13px;
+          color: #c7c7c7;
+          letter-spacing: -0.5px;
+        }
       }
     }
   }
 }
-
-.nav {
+.nav_LYS {
   position: fixed;
   top: 0;
   left: 0;

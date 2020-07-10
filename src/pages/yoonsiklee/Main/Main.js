@@ -7,13 +7,13 @@ import "./main.scss";
 class Main extends Component {
   render() {
     return (
-      <>
+      <div className="Main_LYS">
         <Nav />
         <div className="main">
           <Article />
           <Aside />
         </div>
-      </>
+      </div>
     );
   }
 }

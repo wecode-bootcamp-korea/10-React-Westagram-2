@@ -8,7 +8,7 @@ class Nav extends Component {
 
   render() {
     return (
-      <nav class="nav">
+      <nav class="nav_LYS">
         <div className="nav_container">
           <div className="logo_container">
             <img

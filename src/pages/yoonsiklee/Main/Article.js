@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Article extends Component {
   render() {
     return (
-      <article>
+      <article className="article_lys">
         <div className="feeds">
           <div className="feeds-header">
             <img
