@@ -1,0 +1,235 @@
+$shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+
+.Phones_KSY {
+  margin-right: 130px;
+  display: flex;
+  justify-content: center;
+
+  ul {
+    list-style: none;
+  }
+
+  .phones__box {
+    width: 280px;
+    height: 550px;
+    padding: 15px 10px;
+    border: 3px solid #f3eeee2d;
+    border-radius: 40px;
+    background-color: #212121;
+    box-shadow: $shadow;
+    position: relative;
+
+    .phone__header {
+      display: flex;
+    }
+    
+    .header__camera {
+      width: 10px;
+      height: 10px;
+      margin: 0px 30px;
+      border-radius: 50%;
+      background-color: #f3eeee2d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .phone__screen {
+      width: 250px;
+      height: 430px;
+      margin-top: 30px;
+      background-color: white;
+      position: relative;
+    }
+
+    .camera__small-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: #212121;
+    }
+
+    .screen__main img {
+      width: 100%;
+      height: 170px;
+    }
+
+    .screen__nav {
+      width: 100%;
+      padding: 10px 15px;
+      position: absolute;
+      bottom: 0;
+      background-color: white;
+
+      .screen__nav-list {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    .header__speaker {
+      width: 100px;
+      height: 7px;
+      border-radius: 10%;
+      background-color: #f3eeee2d;
+    }
+
+    .black-phone {
+
+      .header__alert {
+        height: 20px;
+        background-color: #afafaf;
+      }
+
+      .header__search {
+        padding: 10px;
+        background-color: white;
+
+        i {
+          margin-right: 5px;
+        }
+        
+        input {
+          border: none;
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .white-phone {
+      width: 280px;
+      height: 570px;
+      padding: 5px 10px;
+      border: 4px solid #e6e7e7;
+      border-radius: 40px;
+      position: absolute;
+      top: 5px;
+      left: 90px;
+      background-color: #f6f8fa;
+      box-shadow: inset -6px -6px 15px rgba(145, 160, 180, 0.45),
+        30px 30px 40px rgba(118, 146, 180, 0.18);
+      z-index: 1;
+
+      .phone {
+        height: 545px;
+        padding-top: 5px;
+        border-radius: 40px;
+        background-color: rgba(243, 241, 241, 0.76);
+
+        .phone__header {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .phone__header-column {
+            display: flex;
+            align-items: center;
+
+            .header-dot {
+              width: 6px;
+              height: 6px;
+              margin-bottom: 10px;
+              border-radius: 50%;
+              background-color: #212121;
+            }
+          }
+
+          .header__speaker {
+            width: 45px;
+            height: 5px;
+            border-radius: 100px;
+            background-color: #212121da;
+            position: relative;
+
+            .header__camera {
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background-color: #212121;
+              position: absolute;
+              left: -60px;
+              top: -2px;
+            }
+          }
+
+        }
+
+        .phone__screen-box {
+          display: flex;
+          justify-content: center;
+
+          .phone__screen {
+            width: 238px;
+            height: 430px;
+            margin: 30px 3px 0 3px;
+            border: 3px solid black;
+
+            .screen__header {
+              width: 100%;
+              padding: 10px;
+              background-color: white;
+              font-size: 12px;
+              opacity: 0.8;
+            }
+
+            .screen__main {
+              height: 400px;
+              display: flex;
+              flex-direction: column;
+
+              .main__img {
+                width: 100%;
+                height: 250px;
+                padding: 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                background-image: url("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODAzMjNfMzEg%2FMDAxNTIxODEzOTM3MDE4.a1PVvn6wB8HGlGA7PQLYmdMMj7yADJ33eu7JS-Lvmpog.nKZkAconZTvDTvlFqL9MQBi2ErA4Z3QBukyjVJ489K0g.JPEG.plantsworld2%2F%25BA%25CE%25BB%25EA%25BC%25B1%25C0%25CE%25C0%25E5%25C0%25CE%25C5%25D7%25B8%25AE%25BE%25EE_%25284%2529.jpg&type=b400");
+                color: white;
+              }
+
+              .main__button {
+                height: 125px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .button__camera {
+                  width: 55px;
+                  height: 55px;
+                  border-radius: 50%;
+                  border: 10px solid #c6c6c6;
+                }
+              }
+            }
+
+            .screen__nav-list {
+              width: 100%;
+              display: flex;
+              align-items: space-between;
+              opacity: 0.5;
+
+              .camera {
+                opacity: 0.9;
+              }
+            }
+          }
+        }
+
+        .phone__home-btn {
+          margin-top: 10px;
+          display: flex;
+          justify-content: center;
+
+          .home-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid silver;
+          }
+        }
+      }
+    }
+  }
+}

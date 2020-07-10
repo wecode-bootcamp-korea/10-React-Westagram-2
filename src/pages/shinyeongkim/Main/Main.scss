@@ -1,0 +1,19 @@
+.Main_KSY {
+  .main-box {
+    width: 935px;
+    margin: 50px auto 0 auto;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    font-size: 14px;
+
+    .left {
+      width: 614px;
+    }
+
+    .user__id {
+      font-weight: 600;
+    }
+  }
+}

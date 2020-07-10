@@ -1,0 +1,56 @@
+.SearchDropDown_KSY {
+  width: 241px;
+  max-height: 362px;
+  position: absolute;
+  top: 55px;
+  right: 0 auto;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  visibility: hidden;
+  overflow: hidden;
+  overflow-y: scroll;
+  z-index: 2;
+
+  li {
+    width: 100%;
+    height: 67px;
+    padding: 8px 14px;
+    display: flex;
+    background-color: #ffffff;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #dbdbdb;;
+    }
+
+    &:hover {
+      background-color: #fafafa;
+      cursor: pointer;
+    }
+
+    .img-box {
+      display: flex;
+      justify-self: center;
+      align-items: center;
+      margin-right: 10px;
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+    }      
+
+    .text-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 14px;
+
+      .user-name {
+        margin-top: 5px;
+        font-weight: 400;
+        opacity: 0.4;
+      }
+    }
+  }
+}

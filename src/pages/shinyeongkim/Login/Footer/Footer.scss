@@ -1,0 +1,22 @@
+.Footer_KSY {
+  display: flex;
+  justify-content: space-around;
+  font-size: 12px;
+  font-weight: 700;
+  width: 100%;
+
+  ul {
+    display: flex;
+    color: #385185;
+    list-style: none;
+
+    li {
+      padding-right: 15px;
+      cursor: pointer;
+    }
+  }
+
+  .copyright {
+    opacity: 0.5;
+  }
+}
