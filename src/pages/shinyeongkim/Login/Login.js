@@ -2,6 +2,8 @@ import React from 'react';
 import Phones from './Phones/Phones';
 import Footer from './Footer/Footer';
 import {withRouter, Link} from 'react-router-dom';
+import {FaApple} from 'react-icons/fa';
+import {FaGooglePlay} from 'react-icons/fa';
 import './Login.scss';
 
 class Login extends React.Component {
@@ -17,7 +19,7 @@ class Login extends React.Component {
 
   handleLogin = (e) => {
     e.preventDefault();
-    if(this.state.id === this.state.userid) {
+    if((this.state.id === this.state.userid) && (this.state.pw === this.state.userpw)) {
       this.props.history.push('/main-shinyeongkim');
     } 
   }
@@ -80,14 +82,14 @@ class Login extends React.Component {
               <div>앱을 다운로드하세요.</div>
               <div className="link-box">
                 <div className="appStore link">
-                  <i className="fab fa-apple"></i>
+                  <FaApple size={30}/>
                   <span>AppStore에서<br />다운로드 하기</span>
                 </div>
                 <div className="googlePlay link">
-                  <i className="fab fa-google-play"></i>
-                  <div>
-                    <span className="text-top">다운로드하기</span>
-                    <span className="text-bottom">Google Play</span>
+                    <FaGooglePlay size={28} color="#00D4FF"/>
+                    <div>
+                      <span className="text-top">다운로드하기</span>
+                      <span className="text-bottom">Google Play</span>
                   </div>
                 </div>
               </div>

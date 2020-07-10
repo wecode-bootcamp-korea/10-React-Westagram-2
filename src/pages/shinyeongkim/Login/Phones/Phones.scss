@@ -43,7 +43,7 @@ $shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
       position: relative;
     }
 
-    .camera__small-dot {
+    .small-dot {
       width: 5px;
       height: 5px;
       border-radius: 50%;
@@ -55,16 +55,18 @@ $shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
       height: 170px;
     }
 
-    .screen__nav {
+    nav {
       width: 100%;
+      height: 35px;
       padding: 10px 15px;
       position: absolute;
       bottom: 0;
       background-color: white;
 
-      .screen__nav-list {
+      .list {
         display: flex;
         justify-content: space-between;
+        align-items: center;
       }
     }
 
@@ -77,12 +79,12 @@ $shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
 
     .black-phone {
 
-      .header__alert {
+      .alert {
         height: 20px;
         background-color: #afafaf;
       }
 
-      .header__search {
+      .search {
         padding: 10px;
         background-color: white;
 
@@ -122,7 +124,7 @@ $shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
           flex-direction: column;
           align-items: center;
 
-          .phone__header-column {
+          .column {
             display: flex;
             align-items: center;
 
@@ -165,7 +167,7 @@ $shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
             margin: 30px 3px 0 3px;
             border: 3px solid black;
 
-            .screen__header {
+            .screen-header {
               width: 100%;
               padding: 10px;
               background-color: white;
@@ -178,7 +180,7 @@ $shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
               display: flex;
               flex-direction: column;
 
-              .main__img {
+              .img-box {
                 width: 100%;
                 height: 250px;
                 padding: 10px;
@@ -189,13 +191,13 @@ $shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
                 color: white;
               }
 
-              .main__button {
+              .button-box {
                 height: 125px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
 
-                .button__camera {
+                .camera-btn {
                   width: 55px;
                   height: 55px;
                   border-radius: 50%;
@@ -204,25 +206,31 @@ $shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
               }
             }
 
-            .screen__nav-list {
-              width: 100%;
-              display: flex;
-              align-items: space-between;
-              opacity: 0.5;
-
-              .camera {
-                opacity: 0.9;
-              }
+            nav {
+              .list {
+                width: 100%;
+                display: flex;
+                align-items: space-between;
+                font-size: 12px;
+  
+                .item {
+                  opacity: 0.5;
+                }
+  
+                .camera {
+                  color: black;
+                }
+              }  
             }
           }
         }
 
-        .phone__home-btn {
+        .btn-box {
           margin-top: 10px;
           display: flex;
           justify-content: center;
 
-          .home-btn {
+          .btn {
             width: 40px;
             height: 40px;
             border-radius: 50%;

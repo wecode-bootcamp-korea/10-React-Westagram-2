@@ -68,6 +68,11 @@
           margin-bottom: 5px;
         }
 
+        .contents {
+          margin-left: 5px;
+          font-weight: 400;
+        }
+
         .interaction {
           margin: 10px 0;
           display: flex;
@@ -101,11 +106,6 @@
         .text-preview {
           display: flex;
           align-items: center;
-
-          .contents {
-            margin-left: 5px;
-            font-weight: 400;
-          }
         }
 
         .comment {

@@ -1,4 +1,5 @@
 import React from 'react';
+import {FaRegHeart} from 'react-icons/fa';
 import './Feeds.scss';
 
 class Feeds extends React.Component {
@@ -69,7 +70,7 @@ class Feeds extends React.Component {
                       <span className="contents">안시는 찐사랑입니다~~</span>
                     </div>
                     <div className="heart-btn">
-                      <i className="far fa-heart"></i>
+                      <FaRegHeart />
                     </div>
                   </li>
                 </ul>
