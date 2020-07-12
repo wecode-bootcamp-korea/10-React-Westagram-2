@@ -1,10 +1,10 @@
-import React from 'react';
-import Nav from './Nav/Nav';
-import Feeds from './Feeds/Feeds';
-import Stories from './Stories/Stories';
-import MainRight from './MainRight/MainRight';
-import SearchDropDown from './SearchDropDown/SearchDropDown';
-import './Main.scss';
+import React from "react";
+import Nav from "./Nav/Nav";
+import Feeds from "./Feeds/Feeds";
+import Stories from "./Stories/Stories";
+import MainRight from "./MainRight/MainRight";
+import SearchDropDown from "./SearchDropDown/SearchDropDown";
+import "./Main.scss";
 
 class Main extends React.Component {
   render() {
@@ -20,7 +20,7 @@ class Main extends React.Component {
           <MainRight />
         </main>
       </div>
-    )
+    );
   }
 }
 

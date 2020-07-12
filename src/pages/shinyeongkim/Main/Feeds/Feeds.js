@@ -1,9 +1,57 @@
-import React from 'react';
-import {FaRegHeart} from 'react-icons/fa';
-import './Feeds.scss';
+import React from "react";
+import { FaRegHeart } from "react-icons/fa";
+import { RiDeleteBinLine } from "react-icons/ri";
+import "./Feeds.scss";
 
 class Feeds extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      commentList: [],
+      commentText: "",
+      userId: "aida_shin.y",
+    };
+  }
+
+  handleCommentText = (e) => {
+    this.setState({ commentText: e.target.value });
+  };
+
+  handleCommentUpload = (e) => {
+    e.preventDefault();
+    let comments = this.state.commentList;
+    comments = comments.concat(this.state.commentText);
+    this.setState({
+      commentText: "",
+      commentList: comments,
+    });
+  };
+
+  handleDeleteComment = (index) => {
+    const List = this.state.commentList;
+    List.splice(index, 1);
+    this.setState({ commentList: List });
+  };
+
   render() {
+    const comment = this.state.commentList.map((comment, i) => {
+      return (
+        <li className="comment" key={i}>
+          <div className="texts">
+            <span className="user__id">{this.state.userId}</span>
+            <span className="contents">{comment}</span>
+          </div>
+          <div className="heart-btn">
+            <RiDeleteBinLine
+              style={{ marginRight: "5px", cursor: "pointer" }}
+              onClick={() => this.handleDeleteComment(i)}
+            />
+            <FaRegHeart />
+          </div>
+        </li>
+      );
+    });
+
     return (
       <div className="Feeds_KSY">
         <article className="feed">
@@ -14,9 +62,7 @@ class Feeds extends React.Component {
                 className="user__img"
                 src="http://bitly.kr/fDGTTLcd6pM"
               />
-              <span className="user__id">
-                s_shin.a
-              </span>
+              <span className="user__id">s_shin.a</span>
             </div>
             <div className="icon">
               <img
@@ -37,7 +83,11 @@ class Feeds extends React.Component {
                     <path d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"></path>
                   </svg>
                   <svg aria-label="댓글 달기" viewBox="0 0 48 48">
-                    <path clipRule="evenodd" d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z" fillRule="evenodd"></path>
+                    <path
+                      clipRule="evenodd"
+                      d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
+                      fillRule="evenodd"
+                    ></path>
                   </svg>
                   <svg aria-label="게시물 공유" viewBox="0 0 48 48">
                     <path d="M47.8 3.8c-.3-.5-.8-.8-1.3-.8h-45C.9 3.1.3 3.5.1 4S0 5.2.4 5.7l15.9 15.6 5.5 22.6c.1.6.6 1 1.2 1.1h.2c.5 0 1-.3 1.3-.7l23.2-39c.4-.4.4-1 .1-1.5zM5.2 6.1h35.5L18 18.7 5.2 6.1zm18.7 33.6l-4.4-18.4L42.4 8.6 23.9 39.7z"></path>
@@ -54,12 +104,14 @@ class Feeds extends React.Component {
                   alt="friend avatar girls"
                   src="http://bitly.kr/uacyfcqBYr"
                 />
-                <span className="about__like-user"> <span className="user__id">goodday</span>님 외 10명이 좋아합니다</span>
+                <span className="about__like-user">
+                  {" "}
+                  <span className="user__id">goodday</span>님 외 10명이
+                  좋아합니다
+                </span>
               </div>
               <div className="text-preview">
-                <span className="user__id login-user">
-                  s_shin.a
-                </span>
+                <span className="user__id login-user">s_shin.a</span>
                 <span className="contents">안시는 사랑입니다</span>
               </div>
               <div>
@@ -73,15 +125,33 @@ class Feeds extends React.Component {
                       <FaRegHeart />
                     </div>
                   </li>
+                  {comment}
                 </ul>
                 <span className="time">43분 전</span>
               </div>
             </div>
           </main>
           <footer className="comment-writing">
-            <form>
-              <input className="writing__input" type="text" placeholder="댓글 달기..." />
-              <button className="writing__btn">게시</button>
+            <form
+              onSubmit={
+                this.state.commentText.length > 0
+                  ? this.handleCommentUpload
+                  : (e) => e.preventDefault()
+              }
+            >
+              <input
+                type="text"
+                onChange={this.handleCommentText}
+                value={this.state.commentText}
+                placeholder="댓글 달기..."
+              />
+              <button
+                className={
+                  this.state.commentText ? "activatedBtn" : "unActivatedBtn"
+                }
+              >
+                게시
+              </button>
             </form>
           </footer>
         </article>
@@ -91,11 +161,9 @@ class Feeds extends React.Component {
               <img
                 alt="user avater"
                 className="user__img"
-                src='/images/shinyeongkim/user.jpg'
+                src="/images/shinyeongkim/user.jpg"
               />
-              <span className="user__id">
-                aida_shin.y
-              </span>
+              <span className="user__id">aida_shin.y</span>
             </div>
             <div className="icon">
               <img
@@ -108,7 +176,7 @@ class Feeds extends React.Component {
             <img
               alt="업로드이미지 Barcelona dog"
               className="main__img"
-              src='/images/shinyeongkim/feed-img.jpg'
+              src="/images/shinyeongkim/feed-img.jpg"
             />
             <div className="text-box">
               <div className="interaction">
@@ -117,7 +185,11 @@ class Feeds extends React.Component {
                     <path d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"></path>
                   </svg>
                   <svg aria-label="댓글 달기" viewBox="0 0 48 48">
-                    <path clipRule="evenodd" d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z" fillRule="evenodd"></path>
+                    <path
+                      clipRule="evenodd"
+                      d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
+                      fillRule="evenodd"
+                    ></path>
                   </svg>
                   <svg aria-label="게시물 공유" viewBox="0 0 48 48">
                     <path d="M47.8 3.8c-.3-.5-.8-.8-1.3-.8h-45C.9 3.1.3 3.5.1 4S0 5.2.4 5.7l15.9 15.6 5.5 22.6c.1.6.6 1 1.2 1.1h.2c.5 0 1-.3 1.3-.7l23.2-39c.4-.4.4-1 .1-1.5zM5.2 6.1h35.5L18 18.7 5.2 6.1zm18.7 33.6l-4.4-18.4L42.4 8.6 23.9 39.7z"></path>
@@ -133,22 +205,25 @@ class Feeds extends React.Component {
                 <span className="about__like-user">70명이 좋아합니다</span>
               </div>
               <div className="text-preview">
-                <span className="user__id login-user">
-                  aida_shin.y
-                </span>
+                <span className="user__id login-user">aida_shin.y</span>
                 <span className="contents">힙한 강아지🕶</span>
               </div>
               <div>
-                <ul className="comments__display">
-                </ul>
+                <ul className="comments__display"></ul>
                 <span className="time">43분 전</span>
               </div>
             </div>
           </main>
           <footer className="comment-writing">
             <form>
-              <input className="writing__input" type="text" placeholder="댓글 달기..." />
-              <button className="writing__btn">게시</button>
+              <input type="text" placeholder="댓글 달기..." />
+              <button
+                className={
+                  this.state.commentText ? "activatedBtn" : "unActivatedBtn"
+                }
+              >
+                게시
+              </button>
             </form>
           </footer>
         </article>
@@ -160,9 +235,7 @@ class Feeds extends React.Component {
                 className="user__img"
                 src="http://bitly.kr/YAmPt11WRso"
               />
-              <span className="user__id">
-                food_photos
-              </span>
+              <span className="user__id">food_photos</span>
             </div>
             <div className="icon">
               <img
@@ -175,7 +248,7 @@ class Feeds extends React.Component {
             <img
               alt="France anecy nature person"
               className="main__img"
-              src='/images/shinyeongkim/feed-img2.jpg'
+              src="/images/shinyeongkim/feed-img2.jpg"
             />
             <div className="text-box">
               <div className="interaction">
@@ -184,7 +257,11 @@ class Feeds extends React.Component {
                     <path d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"></path>
                   </svg>
                   <svg aria-label="댓글 달기" viewBox="0 0 48 48">
-                    <path clipRule="evenodd" d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z" fillRule="evenodd"></path>
+                    <path
+                      clipRule="evenodd"
+                      d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
+                      fillRule="evenodd"
+                    ></path>
                   </svg>
                   <svg aria-label="게시물 공유" viewBox="0 0 48 48">
                     <path d="M47.8 3.8c-.3-.5-.8-.8-1.3-.8h-45C.9 3.1.3 3.5.1 4S0 5.2.4 5.7l15.9 15.6 5.5 22.6c.1.6.6 1 1.2 1.1h.2c.5 0 1-.3 1.3-.7l23.2-39c.4-.4.4-1 .1-1.5zM5.2 6.1h35.5L18 18.7 5.2 6.1zm18.7 33.6l-4.4-18.4L42.4 8.6 23.9 39.7z"></path>
@@ -200,10 +277,11 @@ class Feeds extends React.Component {
                 <span className="about__like-user">205명이 좋아합니다</span>
               </div>
               <div className="text-preview">
-                <span className="user__id login-user">
-                  food_photos
+                <span className="user__id login-user">food_photos</span>
+                <span className="contents">
+                  {" "}
+                  유명한 바르셀로나 해산물 맛집!{" "}
                 </span>
-                <span className="contents"> 유명한 바르셀로나 해산물 맛집! </span>
               </div>
               <div>
                 <ul className="comments__display">
@@ -223,13 +301,19 @@ class Feeds extends React.Component {
           </main>
           <footer className="comment-writing">
             <form>
-              <input className="writing__input" type="text" placeholder="댓글 달기..." />
-              <button className="writing__btn">게시</button>
+              <input type="text" placeholder="댓글 달기..." />
+              <button
+                className={
+                  this.state.commentText ? "activatedBtn" : "unActivatedBtn"
+                }
+              >
+                게시
+              </button>
             </form>
           </footer>
         </article>
-      </div>  
-    )
+      </div>
+    );
   }
 }
 

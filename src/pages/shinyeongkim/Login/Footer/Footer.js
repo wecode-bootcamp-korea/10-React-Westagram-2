@@ -1,6 +1,6 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import './Footer.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Footer.scss";
 
 class Footer extends React.Component {
   render() {
@@ -58,7 +58,7 @@ class Footer extends React.Component {
           <span className="copyright">ⓒ 2020 INSTAGRAM FROM FACEBOOK</span>
         </div>
       </footer>
-    )
+    );
   }
 }
 

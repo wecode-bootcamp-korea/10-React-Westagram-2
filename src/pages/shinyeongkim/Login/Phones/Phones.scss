@@ -1,5 +1,5 @@
 $shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
-0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 
 .Phones_KSY {
   margin-right: 130px;
@@ -23,7 +23,7 @@ $shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
     .phone__header {
       display: flex;
     }
-    
+
     .header__camera {
       width: 10px;
       height: 10px;
@@ -78,7 +78,6 @@ $shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
     }
 
     .black-phone {
-
       .alert {
         height: 20px;
         background-color: #afafaf;
@@ -91,7 +90,7 @@ $shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
         i {
           margin-right: 5px;
         }
-        
+
         input {
           border: none;
           opacity: 0.5;
@@ -154,7 +153,6 @@ $shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
               top: -2px;
             }
           }
-
         }
 
         .phone__screen-box {
@@ -212,15 +210,15 @@ $shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
                 display: flex;
                 align-items: space-between;
                 font-size: 12px;
-  
+
                 .item {
                   opacity: 0.5;
                 }
-  
+
                 .camera {
                   color: black;
                 }
-              }  
+              }
             }
           }
         }

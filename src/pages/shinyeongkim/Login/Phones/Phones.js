@@ -1,12 +1,12 @@
-import React from 'react';
-import {FiRefreshCw} from 'react-icons/fi';
-import {AiFillThunderbolt} from 'react-icons/ai';
-import {AiFillHome} from 'react-icons/ai';
-import {FiSearch} from 'react-icons/fi';
-import {FaCamera} from 'react-icons/fa';
-import {FaHeart} from 'react-icons/fa';
-import {FaRegUser} from 'react-icons/fa';
-import './Phones.scss';
+import React from "react";
+import { FiRefreshCw } from "react-icons/fi";
+import { AiFillThunderbolt } from "react-icons/ai";
+import { AiFillHome } from "react-icons/ai";
+import { FiSearch } from "react-icons/fi";
+import { FaCamera } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
+import { FaRegUser } from "react-icons/fa";
+import "./Phones.scss";
 
 class Phones extends React.Component {
   render() {
@@ -95,7 +95,7 @@ class Phones extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 

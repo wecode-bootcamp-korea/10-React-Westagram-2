@@ -1,7 +1,8 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { BsSearch } from "react-icons/bs";
+import { MdCancel } from "react-icons/md";
 import "./Nav.scss";
-
 
 class Nav extends React.Component {
   render() {
@@ -12,15 +13,15 @@ class Nav extends React.Component {
             <img
               className="insta-logo"
               alt="instgram text logo"
-              src='/images/shinyeongkim/logo_text.png'
+              src="/images/shinyeongkim/logo_text.png"
             />
           </div>
           <div className="search-bar">
             <div className="search-box">
               <input type="text" placeholder="검색" className="search-input" />
-              <i className="fas fa-search searchIcon-center"></i>
-              <i className="fas fa-search searchIcon-focus"></i>
-              <i className="fas fa-times searchIcon-cancel"></i>
+              <BsSearch className="searchIcon-center icon" />
+              <BsSearch className="searchIcon-focus icon" />
+              <MdCancel className="searchIcon-cancel icon" />
             </div>
           </div>
           <div className="icons">
@@ -62,7 +63,7 @@ class Nav extends React.Component {
                   <img
                     className="user__img"
                     alt="user__img"
-                    src='/images/shinyeongkim/user.jpg'
+                    src="/images/shinyeongkim/user.jpg"
                   />
                 </Link>
               </li>

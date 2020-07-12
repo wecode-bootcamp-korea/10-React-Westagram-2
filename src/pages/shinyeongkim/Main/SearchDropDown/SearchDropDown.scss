@@ -19,7 +19,7 @@
     background-color: #ffffff;
 
     &:not(:last-child) {
-      border-bottom: 1px solid #dbdbdb;;
+      border-bottom: 1px solid #dbdbdb;
     }
 
     &:hover {
@@ -38,7 +38,7 @@
         height: 32px;
         border-radius: 50%;
       }
-    }      
+    }
 
     .text-box {
       display: flex;

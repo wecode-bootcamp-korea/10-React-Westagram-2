@@ -1,5 +1,5 @@
-import React from 'react';
-import './Stories.scss';
+import React from "react";
+import "./Stories.scss";
 
 class Stories extends React.Component {
   render() {
@@ -9,7 +9,11 @@ class Stories extends React.Component {
           <li className="story">
             <div className="mark">
               <div className="line">
-                <img alt="fatou님의 프로필사진" className="user__img" src="/images/shinyeongkim/avatar1.jpg" />
+                <img
+                  alt="fatou님의 프로필사진"
+                  className="user__img"
+                  src="/images/shinyeongkim/avatar1.jpg"
+                />
               </div>
             </div>
             <span className="user__id">fatou</span>
@@ -17,7 +21,11 @@ class Stories extends React.Component {
           <li className="story">
             <div className="mark">
               <div className="line">
-                <img alt="ibrahima님의 프로필사진" className="user__img" src="/images/shinyeongkim/avatar2.jpg" />
+                <img
+                  alt="ibrahima님의 프로필사진"
+                  className="user__img"
+                  src="/images/shinyeongkim/avatar2.jpg"
+                />
               </div>
             </div>
             <span className="user__id">ibrahima</span>
@@ -25,7 +33,11 @@ class Stories extends React.Component {
           <li className="story">
             <div className="mark">
               <div className="line">
-                <img alt="lemondefr님의 프로필사진" className="user__img" src="http://bitly.kr/cR60O74QHzq" />
+                <img
+                  alt="lemondefr님의 프로필사진"
+                  className="user__img"
+                  src="http://bitly.kr/cR60O74QHzq"
+                />
               </div>
             </div>
             <span className="user__id">lemondefr</span>
@@ -33,7 +45,11 @@ class Stories extends React.Component {
           <li className="story">
             <div className="mark">
               <div className="line">
-                <img alt="lemondefr님의 프로필사진" className="user__img" src="http://bitly.kr/kxJAIN3q67L" />
+                <img
+                  alt="lemondefr님의 프로필사진"
+                  className="user__img"
+                  src="http://bitly.kr/kxJAIN3q67L"
+                />
               </div>
             </div>
             <span className="user__id">ted</span>
@@ -41,7 +57,11 @@ class Stories extends React.Component {
           <li className="story">
             <div className="mark">
               <div className="line">
-                <img alt="lemondefr님의 프로필사진" className="user__img" src="http://bitly.kr/FzgjjhkFbdq" />
+                <img
+                  alt="lemondefr님의 프로필사진"
+                  className="user__img"
+                  src="http://bitly.kr/FzgjjhkFbdq"
+                />
               </div>
             </div>
             <span className="user__id">henryl89</span>
@@ -49,7 +69,11 @@ class Stories extends React.Component {
           <li className="story">
             <div className="mark">
               <div className="line">
-                <img alt="lemondefr님의 프로필사진" className="user__img" src="http://bitly.kr/mipSBb1FDwa" />
+                <img
+                  alt="lemondefr님의 프로필사진"
+                  className="user__img"
+                  src="http://bitly.kr/mipSBb1FDwa"
+                />
               </div>
             </div>
             <span className="user__id">yoonjujang</span>
@@ -57,7 +81,11 @@ class Stories extends React.Component {
           <li className="story">
             <div className="mark">
               <div className="line">
-                <img alt="lemondefr님의 프로필사진" className="user__img" src="http://bitly.kr/AmfY3xpxuEG" />
+                <img
+                  alt="lemondefr님의 프로필사진"
+                  className="user__img"
+                  src="http://bitly.kr/AmfY3xpxuEG"
+                />
               </div>
             </div>
             <span className="user__id">konbini</span>
@@ -65,7 +93,11 @@ class Stories extends React.Component {
           <li className="story">
             <div className="mark">
               <div className="line">
-                <img alt="lemondefr님의 프로필사진" className="user__img" src="http://bitly.kr/I8GSoKwKHWh" />
+                <img
+                  alt="lemondefr님의 프로필사진"
+                  className="user__img"
+                  src="http://bitly.kr/I8GSoKwKHWh"
+                />
               </div>
             </div>
             <span className="user__id">franciscoblancophotos</span>
@@ -73,7 +105,11 @@ class Stories extends React.Component {
           <li className="story">
             <div className="mark">
               <div className="line">
-                <img alt="lemondefr님의 프로필사진" className="user__img" src="http://bitly.kr/yHowiSjCQxf" />
+                <img
+                  alt="lemondefr님의 프로필사진"
+                  className="user__img"
+                  src="http://bitly.kr/yHowiSjCQxf"
+                />
               </div>
             </div>
             <span className="user__id">jung.sia</span>
@@ -81,7 +117,11 @@ class Stories extends React.Component {
           <li className="story">
             <div className="mark">
               <div className="line">
-                <img alt="lemondefr님의 프로필사진" className="user__img" src="http://bitly.kr/5Sl7CwYI0W5" />
+                <img
+                  alt="lemondefr님의 프로필사진"
+                  className="user__img"
+                  src="http://bitly.kr/5Sl7CwYI0W5"
+                />
               </div>
             </div>
             <span className="user__id">tyleroninsta</span>
@@ -89,14 +129,18 @@ class Stories extends React.Component {
           <li className="story">
             <div className="mark">
               <div className="line">
-                <img alt="lemondefr님의 프로필사진" className="user__img" src="http://bitly.kr/t8dFXp7Gunj" />
+                <img
+                  alt="lemondefr님의 프로필사진"
+                  className="user__img"
+                  src="http://bitly.kr/t8dFXp7Gunj"
+                />
               </div>
             </div>
             <span className="user__id">bbclearningenglish</span>
           </li>
         </ul>
       </div>
-    )
+    );
   }
 }
 
