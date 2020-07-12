@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import './Header.scss';
 
 class Header extends Component {
-  state = { searchbarInputValue: "", searchBarFocused: false } 
+  state = { 
+    searchbarInputValue: "", 
+    searchBarFocused: false 
+  }; 
 
   onSearchBarChange = (event) => {
-    this.setState({searchbarInputValue: event.target.value}); 
+    this.setState({
+      searchbarInputValue: event.target.value
+    }); 
   }
 
   render() {

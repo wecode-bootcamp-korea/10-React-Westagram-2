@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import faker from 'faker';
-
 import StoryItem from './StoryItem/StoryItem';
 import Feed from './Feed/Feed';
 import './MainContent.scss';
 
 class MainContent extends Component {
-  state = {stories: [], feeds: []};
+  state = { stories: [], feeds: [] };
 
   componentDidMount() {
     const makeStories = () => {
@@ -53,7 +52,7 @@ class MainContent extends Component {
 
     const stories = myRepeat(makeStories, 20);
     const feeds = myRepeat(makeFeeds, 10);
-    this.setState({stories, feeds});
+    this.setState({ stories, feeds });
   }
 
   render() {

@@ -1,32 +1,42 @@
 import React, { Component } from 'react';
 import faker from 'faker';
 import Comment from './Comment/Comment';
-
 import './Feed.scss';
 
 class Feed extends Component {
-  state = { comments: this.props.feed.comments, commentInput: "", postButtonClass: ""};
+  state = { 
+    comments: this.props.feed.comments, 
+    commentInput: "", 
+    postButtonActive: false 
+  };
 
   onCommentFormSubmit = (event) => {
     event.preventDefault();
-    if (this.state.commentInput === "") return;
+		if (this.state.commentInput === "") {
+			alert("댓글을 입력해주세요");
+			return;
+		}
 
     const userName = faker.internet.userName().slice(0, 6);
-    this.setState((prevState) => ({...prevState, comments: prevState.comments.push({
-      userName,
-      content: prevState.commentInput
-    })}));
-    this.setState({...this.state, commentInput: "", postButtonClass: ""});
+    this.setState((prevState) => { return {
+      comments: [...prevState.comments, {
+        userName,
+        content: prevState.commentInput
+      }], 
+      commentInput: "", 
+      postButtonActive: false 
+    }});
+
   }
 
   onCommentChange = (event) => {
     event.target.value 
-    ? this.setState({...this.state, commentInput: event.target.value, postButtonClass: "active"})
-    : this.setState({...this.state, commentInput: event.target.value, postButtonClass: ""});
+    ? this.setState({ commentInput: event.target.value, postButtonActive: true })
+    : this.setState({ commentInput: event.target.value, postButtonActive: false });
   }
 
   render() {
-    const { thumbnail, userName, likes, image, paragraph, hashes, comments } = this.props.feed;
+    const { thumbnail, userName, likes, image, paragraph, hashes } = this.props.feed;
     return (
       <div className="Feed_J">
          <div className="head">
@@ -49,12 +59,12 @@ class Feed extends Component {
             {hashes.map((hash, index) => <span key={hash + index} className="hash"> #{hash}</span> )}
           </div>
           <div className="comments">
-            {comments.map((comment, index) => <Comment key={comment.userName + index} comment={comment}/>)} 
+            {this.state.comments.map((comment, index) => <Comment key={comment.userName + index} comment={comment}/>)} 
           </div>
           <div className="time">17시간 전</div>
           <form className="comment-input-box" onSubmit={this.onCommentFormSubmit}>
             <input className="text" placeholder="댓글 달기..." value={this.state.commentInput} onChange={this.onCommentChange}/>
-            <button type="submit" className={`post ${this.state.postButtonClass}`}>게시</button>
+            <button type="submit" className={`post ${this.state.postButtonActive ? 'active' : ''}`}>게시</button>
           </form >
       </div>
     );

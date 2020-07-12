@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import './Login.scss';
 
 class Login extends Component {
-  state = {buttonClass: '', idValue: '', pwValue: ''};
+  state = {
+    buttonActive: false, 
+    idValue: '', 
+    pwValue: ''
+  };
 
   onLoginButtonClick = () => {
     const { idValue, pwValue } = this.state;
@@ -12,11 +16,11 @@ class Login extends Component {
   }
 
   onIdChange = (event) => {
-    this.setState({...this.state, idValue: event.target.value});
+    this.setState({ idValue: event.target.value });
   }
 
   onPwChange = (event) => {
-    this.setState({...this.state, pwValue: event.target.value});
+    this.setState({ pwValue: event.target.value });
   }
 
   onInputBoxKeyUp = () => {
@@ -24,8 +28,8 @@ class Login extends Component {
     const isValid = idValue.length !== 0 && pwValue.length !== 0; 
 
     isValid 
-      ? this.setState({...this.state, buttonClass: 'active'}) 
-      : this.setState({...this.state, buttonClass: ''});
+      ? this.setState({ buttonActive: true }) 
+      : this.setState({ buttonActive: false }); 
   }
   
   render() {
@@ -48,7 +52,12 @@ class Login extends Component {
             value={this.state.pwValue}
             onChange={this.onPwChange}
           />
-          <button className={`${this.state.buttonClass}`} onClick={this.onLoginButtonClick} >로그인</button>
+          <button 
+            className={this.state.buttonActive ? 'active' : ''} 
+            onnClick={this.onLoginButtonClick} 
+          >
+            로그인
+          </button>
         </div>
         <div className="login-pw-check">
           비밀번호를 잊으셨나요?
