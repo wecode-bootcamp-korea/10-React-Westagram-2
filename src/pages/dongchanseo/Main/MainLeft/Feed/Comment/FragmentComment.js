@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CommentLit from "./Comment/CommentList";
+import CommentLit from "./CommentList";
 import "./FragmentComment.scss";
 
 class FragmentComment extends Component {
@@ -19,6 +19,11 @@ class FragmentComment extends Component {
 
   // 댓글 추가 이벤트 함수
   addComment = () => {
+    if (this.state.commentValue === "") {
+      alert("내용이 없습니다.");
+      return;
+    }
+
     this.setState({
       commentValue: "",
       commentList: this.state.commentList.concat({

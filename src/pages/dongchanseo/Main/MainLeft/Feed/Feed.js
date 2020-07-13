@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import FragmentComment from "./FragmentComment";
+import FragmentComment from "./Comment/FragmentComment";
 import Heart from "./Heart/Heart";
 import "./Feed.scss";
 

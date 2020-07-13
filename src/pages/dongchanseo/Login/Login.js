@@ -37,9 +37,11 @@ class Login extends Component {
     /*
       비동기 통신 작업 구간
     */
-    alert("로그인 되었습니다.");
 
-    sessionStorage.setItem("id", this.state.email);
+    let id = this.state.email.split("@");
+    sessionStorage.setItem("id", id[0]);
+
+    alert("로그인 되었습니다.");
 
     this.props.history.push("/main-dongchanseo");
   };
