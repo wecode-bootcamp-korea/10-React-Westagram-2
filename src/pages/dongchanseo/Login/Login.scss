@@ -49,7 +49,7 @@
     }
   }
 
-  button {
+  .button-active {
     width: 405px;
     height: 50px;
     margin-top: 40px;
@@ -63,6 +63,23 @@
     &:hover {
       background-color: purple;
     }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .button-nonactive {
+    width: 405px;
+    height: 50px;
+    margin-top: 40px;
+    border: 0.5px solid grey;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    background-color: grey;
+    cursor: not-allowed;
 
     &:focus {
       outline: none;

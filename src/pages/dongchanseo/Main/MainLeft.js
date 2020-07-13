@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./MainLeft.scss";
-import { Link } from "react-router-dom";
 
 class MainLeft extends Component {
   returnLogin() {}
