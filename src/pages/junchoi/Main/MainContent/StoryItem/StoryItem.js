@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import './StoryItem.scss';
 
 class Story extends Component {
+
+  onStoryImageClick = () => {
+    const { onStoryClick } = this.props;
+    onStoryClick(this.props.story);
+  }
+
   render() {
     const {thumbnail, userName} = this.props.story;
     return (
       <div className="StoryItem_J">
-        <div className="story-image-border">
+        <div onClick={this.onStoryImageClick} className="story-image-border">
           <img src={thumbnail} alt="thumbnail"/>
         </div>
         <div className="story-id">
@@ -17,4 +24,4 @@ class Story extends Component {
   }
 }
 
-export default Story;
+export default withRouter(Story);

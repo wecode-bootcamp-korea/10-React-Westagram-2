@@ -82,10 +82,25 @@
         font-weight: 600;
         cursor: pointer;
       }
-    
-      .content {
-        padding: 0px 0px 0px 20px;
-        font-size: 14px;
+
+      .content-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        .content {
+          width: 500px;
+          padding: 0px 0px 0px 20px;
+          font-size: 14px;
+        }
+
+        button {
+          margin: 0px 20px 0px 0px;
+          background: none;
+          border: none;
+          color: #8E8E8E;
+          font-size: 10px;
+          cursor: pointer;
+        }
       }
     }
   }

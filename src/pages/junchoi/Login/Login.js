@@ -4,32 +4,29 @@ import './Login.scss';
 class Login extends Component {
   state = {
     buttonActive: false, 
-    idValue: '', 
-    pwValue: ''
+    id: '', 
+    pw: ''
   };
 
-  onLoginButtonClick = () => {
-    const { idValue, pwValue } = this.state;
-    const isValid = idValue.length !== 0 && pwValue.length !== 0; 
+  onLoginFormSubmit = (event) => {
+    event.preventDefault();
+    const { id, pw } = this.state;
+    const isValid = id.length !== 0 && pw.length !== 0; 
 
     if (isValid) this.props.history.push('/main-junchoi');
   }
 
-  onIdChange = (event) => {
-    this.setState({ idValue: event.target.value });
-  }
-
-  onPwChange = (event) => {
-    this.setState({ pwValue: event.target.value });
+  onInputsChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
   }
 
   onInputBoxKeyUp = () => {
-    const { idValue, pwValue } = this.state;
-    const isValid = idValue.length !== 0 && pwValue.length !== 0; 
+    const { id, pw } = this.state;
+    const isValid = id.length !== 0 && pw.length !== 0; 
 
-    isValid 
-      ? this.setState({ buttonActive: true }) 
-      : this.setState({ buttonActive: false }); 
+    this.setState({
+      buttonActive: isValid ? true : false
+    });
   }
   
   render() {
@@ -37,28 +34,33 @@ class Login extends Component {
       <div className="Login_J">
         <div className="login-content">
         <img src="/images/junchoi/logo_text.png" alt="logo_text"/>
-        <div className="login-input-box" onKeyUp={this.onInputBoxKeyUp}>
+        <form className="login-input-box" 
+          onKeyUp={this.onInputBoxKeyUp} 
+          onSubmit={this.onLoginFormSubmit}
+        >
           <input 
             className="id" 
+            name="id"
             type="text" 
             placeholder="전화번호, 사용자 이름 또는 이메일" 
-            value={this.state.idValue}
-            onChange={this.onIdChange}
+            value={this.state.id}
+            onChange={this.onInputsChange}
           />
           <input 
             className="pw" 
+            name="pw"
             type="password" 
             placeholder="비밀번호"
-            value={this.state.pwValue}
-            onChange={this.onPwChange}
+            value={this.state.pw}
+            onChange={this.onInputsChange}
           />
           <button 
             className={this.state.buttonActive ? 'active' : ''} 
-            onClick={this.onLoginButtonClick} 
+            type="submit"
           >
             로그인
           </button>
-        </div>
+        </form>
         <div className="login-pw-check">
           비밀번호를 잊으셨나요?
         </div>

@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import faker from 'faker';
 import StoryItem from './StoryItem/StoryItem';
 import Feed from './Feed/Feed';
+import StoryModal from './StoryModal/StoryModal';
+import Dimmer from './Dimmer/Dimmer';
 import './MainContent.scss';
 
 class MainContent extends Component {
-  state = { stories: [], feeds: [] };
+  state = { stories: [], feeds: [], storyModalStatus : false, storyModal: null };
 
   componentDidMount() {
     const makeStories = () => {
@@ -51,26 +53,32 @@ class MainContent extends Component {
     };
 
     const stories = myRepeat(makeStories, 20);
-    const feeds = myRepeat(makeFeeds, 10);
+    const feeds = myRepeat(makeFeeds, 15);
     this.setState({ stories, feeds });
   }
 
+  onStoryClick = (story) => {
+    this.setState({ storyModalStatus: true, storyModal: story });    
+  }
+
+  modalOff = () => {
+    this.setState({ storyModalStatus: false, storyModal: null});
+  }
+
   render() {
-    const renderStories = this.state.stories.map((story, index) => {
-      return <StoryItem key={story.userName + index} story={story}/>
-    });
-
-    const renderFeeds = this.state.feeds.map((feed, index) => {
-      return <Feed key={feed.userName + index} feed={feed}/>
-    });
-
     return(
       <div className="MainContent_J">
+        {this.state.storyModalStatus && <StoryModal storyModal={this.state.storyModal} /> }
+        {this.state.storyModalStatus && <Dimmer modalOff={this.modalOff} /> }
         <div className="main-stories">
-          {renderStories}
+          {this.state.stories.map((story, index) => {
+            return <StoryItem key={story.userName + index} story={story} onStoryClick={this.onStoryClick}/>
+          })}
         </div>
         <div className="main-feeds">
-          {renderFeeds}
+          {this.state.feeds.map((feed, index) => {
+            return <Feed key={feed.userName + index} feed={feed}/>
+          })}
         </div>
       </div>
     );

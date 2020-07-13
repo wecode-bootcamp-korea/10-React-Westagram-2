@@ -12,27 +12,37 @@ class Feed extends Component {
 
   onCommentFormSubmit = (event) => {
     event.preventDefault();
-		if (this.state.commentInput === "") {
-			alert("댓글을 입력해주세요");
-			return;
-		}
+    if (this.state.commentInput === "") {
+      alert("댓글을 입력해주세요");
+      return;
+    }
 
     const userName = faker.internet.userName().slice(0, 6);
-    this.setState((prevState) => { return {
-      comments: [...prevState.comments, {
-        userName,
-        content: prevState.commentInput
-      }], 
-      commentInput: "", 
-      postButtonActive: false 
-    }});
 
+    const { comments, commentInput } = this.state; 
+    const newComments = [...comments, {userName, content: commentInput}];
+
+    this.setState({
+      comments: newComments,
+      commentInput: "",
+      postButtonActive: false
+    });
+    
   }
 
   onCommentChange = (event) => {
-    event.target.value 
-    ? this.setState({ commentInput: event.target.value, postButtonActive: true })
-    : this.setState({ commentInput: event.target.value, postButtonActive: false });
+    this.setState({
+      commentInput: event.target.value,
+      postButtonActive: event.target.value ? true : false
+    });
+  }
+
+  onCommentDelete = (userName) => {
+    this.setState((prevState) => {
+      return {
+        comments: prevState.comments.filter((comment) => comment.userName !== userName)
+      }
+    });
   }
 
   render() {
@@ -59,7 +69,12 @@ class Feed extends Component {
             {hashes.map((hash, index) => <span key={hash + index} className="hash"> #{hash}</span> )}
           </div>
           <div className="comments">
-            {this.state.comments.map((comment, index) => <Comment key={comment.userName + index} comment={comment}/>)} 
+            {this.state.comments.map((comment, index) => 
+              <Comment 
+                key={comment.userName + index} 
+                comment={comment} 
+                onCommentDelete={this.onCommentDelete}
+            />)} 
           </div>
           <div className="time">17시간 전</div>
           <form className="comment-input-box" onSubmit={this.onCommentFormSubmit}>
