@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Main.scss";
-import MainLeft from "./MainLeft";
+import MainLeft from "./MainLeft/MainLeft";
 import Nav from "./Nav";
 import MainRight from "./MainRight";
 

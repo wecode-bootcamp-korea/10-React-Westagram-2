@@ -3,60 +3,10 @@
   flex-flow: column;
   justify-content: space-between;
 
-  //1. 스토리 부분
-  .story {
-    width: 600px;
-    height: 100px;
-    overflow-y: hidden;
-    border: 1px solid #e9ecef;
-    background-color: white;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    .story-list-container {
-      width: 800px;
-      height: 80px;
-      margin: 10px auto;
-      display: flex;
-      align-items: center;
-      border: 1px e9ecef solid;
-      background-color: linear-gradient(to right, yellow, red, purple, blue);
-    }
-
-    .story-profile-container {
-      width: 75px;
-      height: 75px;
-      border-radius: 50%;
-      overflow: hidden;
-      background: linear-gradient(to right, yellow, red);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0px 10px;
-    }
-
-    .story-profile-img {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      overflow: hidden;
-
-      img {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        border: 2px solid white;
-        object-fit: cover;
-      }
-    }
-  }
-
-  //2. 게시판 부분
+  //1. 게시판 부분
   .feed {
     height: 841px;
-    margin-top: 50px;
+    margin-top: 40px;
     border: 1px solid #e9ecef;
     background-color: white;
 

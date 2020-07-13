@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Story from "./Story/Story";
 import "./MainLeft.scss";
 
 class MainLeft extends Component {
@@ -6,45 +7,7 @@ class MainLeft extends Component {
   render() {
     return (
       <div className="MainLeft_DC">
-        <div className="story">
-          <div className="story-list-container">
-            <div className="story-profile-container">
-              <div className="story-profile-img">
-                <img src="/images/dongchanseo/hansohee.png" />
-              </div>
-            </div>
-            <div className="story-profile-container">
-              <div className="story-profile-img">
-                <img src="/images/dongchanseo/hansohee.png" />
-              </div>
-            </div>
-            <div className="story-profile-container">
-              <div className="story-profile-img">
-                <img src="/images/dongchanseo/hansohee.png" />
-              </div>
-            </div>
-            <div className="story-profile-container">
-              <div className="story-profile-img">
-                <img src="/images/dongchanseo/hansohee.png" />
-              </div>
-            </div>
-            <div className="story-profile-container">
-              <div className="story-profile-img">
-                <img src="/images/dongchanseo/hansohee.png" />
-              </div>
-            </div>
-            <div className="story-profile-container">
-              <div className="story-profile-img">
-                <img src="/images/dongchanseo/hansohee.png" />
-              </div>
-            </div>
-            <div className="story-profile-container">
-              <div className="story-profile-inside">
-                <img src="/images/dongchanseo/hansohee.png" />
-              </div>
-            </div>
-          </div>
-        </div>
+        <Story />
 
         <div className="feed">
           <div className="nav">
