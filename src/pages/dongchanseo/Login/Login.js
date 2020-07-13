@@ -9,11 +9,15 @@ class Login extends Component {
   };
 
   handleInput = (e) => {
-    /* 
-      콜백함수로 기능 수정 할 것
-      - isActive 추가
-      - 콜백으로 즉각 반응.. 공부 필요
-    */
+    const pattern_kor = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/; // 한글체크
+    if (pattern_kor.test(e.target.value)) {
+      alert("한글을 입력하셨습니다.");
+      this.setState({
+        ...this.state,
+      });
+      return;
+    }
+
     this.setState({
       ...this.state,
       [e.target.id]: e.target.value,
@@ -29,7 +33,7 @@ class Login extends Component {
     }
   };
 
-  loginClick = () => {
+  handleloginClick = () => {
     /*
       비동기 통신 작업 구간
     */
@@ -48,13 +52,12 @@ class Login extends Component {
             <div className="container-top">
               <img src="/images/dongchanseo/logo_text.png" />
             </div>
-            <div>{this.state.key}</div>
             <div className="container-center">
               <input
                 id="email"
                 placeholder="이메일을 입력하시오"
                 onChange={this.handleInput}
-                value={this.state.key}
+                value={this.state.email}
               />
               <input
                 type="password"
@@ -69,6 +72,7 @@ class Login extends Component {
                     ? "button-active"
                     : "button-nonactive"
                 }
+                onClick={this.handleloginClick}
               >
                 로그인
               </button>
