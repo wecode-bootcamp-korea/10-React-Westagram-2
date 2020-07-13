@@ -5,9 +5,12 @@ import "./Login.scss"
 
 
 class Login extends React.Component {
-    state = {
-        id:'',
-        pw:''
+    constructor() {
+        super();
+        this.state = {
+            id:'',
+            pw:''
+        }
     }
 
     id = (e) => {
@@ -21,40 +24,34 @@ class Login extends React.Component {
     goToMain() {
         let id = this.state.id 
         let pw = this.state.pw
-        if (id && pw) {
+        if (id.includes('@') && pw.length >= 5) {
             alert('성공')
             this.props.history.push('/main-hogeunoh');
             return;
-        } else if (id) {
-            alert('비밀번호 입력해주세요')
-            return;
-        } else if (pw) {
-            alert('아이디 입력해주세요')
-            return;
         } else {
-            alert('입력해주세요')
+            alert('잘못 입력했습니다')
         }
       }
 
     render() {
         return (
-            <div className="login_ho">
+            <div className="Login_ho">
                 <div className="loginBox">
                     <div className="loginLog">
                         <img alt="인스타 로고" src="/images/hogeunoh/logo_text.png" />
                     </div>
                     <div className="loginInput">
                         <div>
-                            <input className="loginId" type="text" placeholder=" 전화번호, 사용자 이름 또는 이메일" value={this.state.id} onChange={this.id}/>
+                            <input className="loginId" type="text" placeholder=" 전화번호, 사용자 이름 또는 이메일" onChange={this.id}/>
                         </div>
                         <div>
-                            <input className="loginPw" type="password" placeholder=" 비밀번호" value={this.state.pw} onChange={this.pw} />
+                            <input className="loginPw" type="password" placeholder=" 비밀번호" onChange={this.pw} />
                         </div>
                         <div>
                             <button 
-                                style={{backgroundColor: this.state.id && this.state.pw ? "blue":"#B2DFFC"}} 
+                                /* style={{backgroundColor: this.state.id && this.state.pw ? "blue":"#B2DFFC"}}  */
                                 onClick={this.goToMain.bind(this)} 
-                                className="loginButton" 
+                                className={this.state.id && this.state.pw ? "loginButton blue":"loginButton skyblue"}
                                 type="button">
                                     로그인
                             </button>

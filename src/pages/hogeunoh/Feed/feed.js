@@ -1,115 +1,71 @@
 import React from "react";
+import Story from "../Story/story"
+import Comment from "../Comment/Comment";
+import Uploadbox from "../Uploadbox/uploadbox"
 import "./feed.scss"
 
 class Feed extends React.Component {
+    constructor() {
+        super();
+         this.state = {
+            storyImg: [
+                {src: '/images/hogeunoh/사진.png',
+                name: 'suayo'},
+                {src: '/images/hogeunoh/이미지1.jpeg',
+                name: 'name2'},
+                {src: '/images/hogeunoh/이미지2.jpeg',
+                name: 'name3'},
+                {src: '/images/hogeunoh/이미지3.jpeg',
+                name: 'name4'},
+                {src: '/images/hogeunoh/이미지4.jpeg',
+                name: 'name5'},
+                {src: '/images/hogeunoh/이미지5.jpeg',
+                name: 'name6'},
+                {src: '/images/hogeunoh/이미지6.jpeg',
+                name: 'name7'},
+                {src: '/images/hogeunoh/이미지7.jpeg',
+                name: 'name8'},
+                {src: '/images/hogeunoh/이미지8.jpeg',
+                name: 'name9'},
+                {src: '/images/hogeunoh/이미지9.jpeg',
+                name: 'name10'},
+            ],
+            img: [
+                {src: '/images/hogeunoh/사진.png',
+                name: 'suayo'},
+                {src: '/images/hogeunoh/이미지1.jpeg',
+                name: 'name2'},
+                {src: '/images/hogeunoh/이미지2.jpeg',
+                name: 'name3'},
+                {src: '/images/hogeunoh/이미지3.jpeg',
+                name: 'name4'},
+                {src: '/images/hogeunoh/이미지4.jpeg',
+                name: 'name5'},
+                {src: '/images/hogeunoh/이미지5.jpeg',
+                name: 'name6'},
+                {src: '/images/hogeunoh/이미지6.jpeg',
+                name: 'name7'},
+                {src: '/images/hogeunoh/이미지7.jpeg',
+                name: 'name8'},
+                {src: '/images/hogeunoh/이미지8.jpeg',
+                name: 'name9'},
+                {src: '/images/hogeunoh/이미지9.jpeg',
+                name: 'name10'},
+            ]
+        } 
+    }
+
     render() {
         return (
             <div className="feed_ho">
                 <div className="storyBox">
-                    <div className="story">
-                        <div className="gradation">
-                            <img alt="profile" src="/images/hogeunoh/사진.png" />
-                        </div>
-                        <span>suayo</span>
-                    </div>
-                    <div className="story">
-                        <div className="gradation">
-                            <img alt="profile" src="/images/hogeunoh/사진.png" />
-                        </div>
-                        <span>suayo</span>
-                    </div>
-                    <div className="story">
-                        <div className="gradation">
-                            <img alt="profile" src="/images/hogeunoh/사진.png" />
-                        </div>
-                        <span>suayo</span>
-                    </div>
-                    <div className="story">
-                        <div className="gradation">
-                            <img alt="profile" src="/images/hogeunoh/사진.png" />
-                        </div>
-                        <span>suayo</span>
-                    </div>
-                    <div className="story">
-                        <div className="gradation">
-                            <img alt="profile" src="/images/hogeunoh/사진.png" />
-                        </div>
-                        <span>suayo</span>
-                    </div>
-                    <div className="story">
-                        <div className="gradation">
-                            <img alt="profile" src="/images/hogeunoh/사진.png" />
-                        </div>
-                        <span>suayo</span>
-                    </div>
-                    <div className="story">
-                        <div className="gradation">
-                            <img alt="profile" src="/images/hogeunoh/사진.png" />
-                        </div>
-                        <span>suayo</span>
-                    </div>
-                    <div className="story">
-                        <div className="gradation">
-                            <img alt="profile" src="/images/hogeunoh/사진.png" />
-                        </div>
-                        <span>suayo</span>
-                    </div>
-                    <div className="story">
-                        <div className="gradation">
-                            <img alt="profile" src="/images/hogeunoh/사진.png" />
-                        </div>
-                        <span>suayo</span>
-                    </div>
-                    <div className="story">
-                        <div className="gradation">
-                            <img alt="profile" src="/images/hogeunoh/사진.png" />
-                        </div>
-                        <span>suayo</span>
-                    </div>
-                    <div className="story">
-                        <div className="gradation">
-                            <img alt="profile" src="/images/hogeunoh/사진.png" />
-                        </div>
-                        <span>suayo</span>
-                    </div>
+                    {this.state.storyImg.map((img, index) => 
+                        <Story key={img.name + index} img={img} />
+                    )}
                 </div>
-                <div className="uploadBox">
-                    <div className="uploadHeaderBox">
-                        <div className="gradationMini">
-                            <img className="UHBprofile" alt="profile" src="/images/hogeunoh/test.png" />
-                        </div>
-                        <span>bombombombom</span>
-                        <img className="UHBdot" alt="dot" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/more.png" />
-                    </div>
-                    <div className="uploadPictureBox">
-                        <img alt="picure" src="/images/hogeunoh/사진.png" />
-                    </div>
-                    <div className="pictureIconBox">
-                        <img alt="love" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png" />
-                        <img alt="" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/comment.png" />
-                        <img alt="" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/share.png" />
-                        <img className="iconLeft" alt=""
-                            src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/bookmark.png" />
-                    </div>
-                    <div className="likeBox">
-                        <img alt="profile" src="/images/hogeunoh/프사.png" />
-                        <div>
-                            <span>hogeun님 외 5명이 좋아합니다.</span>
-                        </div>
-                    </div>
-                    <div className="commentBox">
-                        <span className="name">ohohho</span>
-                        <span>댓글</span>
-                        <img alt="love" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png" />
-                    </div>
-                    <div className="commnetTimeBox">
-                        <span>4시간 전</span>
-                    </div>
-                    <div className="commentInputBox">
-                        <input className="commentInput" type="text" placeholder="댓글 달기..." />
-                        <span className="button">게시</span>
-                    </div>
-                </div>
+                {this.state.img.map((img, index) =>
+                    <Uploadbox key={img.name + index} img={img} /> 
+                )}
             </div>
         );
     }

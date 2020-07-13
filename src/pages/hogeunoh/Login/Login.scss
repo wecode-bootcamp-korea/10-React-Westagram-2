@@ -1,4 +1,4 @@
-.login_ho {
+.Login_ho {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,11 +31,19 @@
                 height: 40px;
                 margin: 13px 0;
                 border-radius: 4px;
-                background-color: #B2DFFC;
+                /* background-color: #B2DFFC; */
                 color: white;
                 font-weight: bold;
                 font-size: 17px;
                 border: none;
+            }
+
+            .blue{
+                background-color: blue;
+            }
+
+            .skyblue{
+               background-color: #B2DFFC
             }
         } 
         
@@ -47,14 +55,3 @@
          }
     }
 }
-
-
-
-
-
-
-
-
-
-
-

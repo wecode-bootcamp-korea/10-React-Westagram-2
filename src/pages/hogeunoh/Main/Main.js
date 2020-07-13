@@ -9,13 +9,13 @@ import "./Main.scss"
 class Main extends React.Component {
     render() {
         return (
-            <div>
+            <>
                 <Nav />
                 <div className="main_ho">
                     <Feed />
                     <MainRight />
                 </div>
-            </div>
+            </>
         );
     }
 }
