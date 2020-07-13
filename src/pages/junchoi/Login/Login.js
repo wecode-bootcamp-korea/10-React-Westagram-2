@@ -54,7 +54,7 @@ class Login extends Component {
           />
           <button 
             className={this.state.buttonActive ? 'active' : ''} 
-            onnClick={this.onLoginButtonClick} 
+            onClick={this.onLoginButtonClick} 
           >
             로그인
           </button>
