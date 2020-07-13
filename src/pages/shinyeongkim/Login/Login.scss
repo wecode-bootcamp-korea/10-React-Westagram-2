@@ -17,44 +17,6 @@ $background-color: #fafafa;
   width: 100vw;
   @extend %vertical-center;
 
-  html,
-  body,
-  div,
-  span,
-  p,
-  a,
-  img,
-  i,
-  ul,
-  li,
-  form,
-  article,
-  aside,
-  header,
-  nav,
-  section {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-  }
-  article,
-  aside,
-  header,
-  nav,
-  section {
-    display: block;
-  }
-  body {
-    line-height: 1;
-  }
-  ol,
-  ul {
-    list-style: none;
-  }
-
   .login__main {
     width: 790px;
     height: 550px;
@@ -88,7 +50,7 @@ $background-color: #fafafa;
           @extend %display-center;
         }
 
-        form {
+        .login-box {
           @extend %vertical-center;
 
           input {
@@ -154,6 +116,16 @@ $background-color: #fafafa;
           i {
             margin-right: 5px;
           }
+        }
+
+        .incorrect-visible {
+          color: red;
+          margin-bottom: 20px;
+          font-size: 14px;
+        }
+
+        .incorrect-invisible {
+          display: none;
         }
 
         .forgot-box {

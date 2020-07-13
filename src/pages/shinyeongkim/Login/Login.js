@@ -1,10 +1,11 @@
 import React from "react";
-import Phones from "./Phones/Phones";
-import Footer from "./Footer/Footer";
 import { withRouter, Link } from "react-router-dom";
 import { FaApple } from "react-icons/fa";
 import { FaGooglePlay } from "react-icons/fa";
+import Phones from "./Phones/Phones";
+import Footer from "./Footer/Footer";
 import "./Login.scss";
+import "./LoginReset.scss";
 
 class Login extends React.Component {
   constructor(props) {
@@ -14,25 +15,38 @@ class Login extends React.Component {
       pw: "12345",
       userid: "",
       userpw: "",
+      incorrectId: false,
+      incorrectPw: false,
     };
   }
 
   handleLogin = (e) => {
-    e.preventDefault();
     if (
       this.state.id === this.state.userid &&
       this.state.pw === this.state.userpw
     ) {
       this.props.history.push("/main-shinyeongkim");
+      this.setState({ incorrectId: false, incorrectPw: false });
+    } else if (
+      this.state.id !== this.state.userid &&
+      this.state.pw === this.state.userpw
+    ) {
+      this.setState({ incorrectId: true, incorrectPw: false });
+    } else if (
+      this.state.id === this.state.userid &&
+      this.state.pw !== this.state.userpw
+    ) {
+      this.setState({ incorrectId: false, incorrectPw: true });
     }
   };
 
-  handleId = (e) => {
-    this.setState({ userid: e.target.value });
-  };
-
-  handlePw = (e) => {
-    this.setState({ userpw: e.target.value });
+  handleInput = (e) => {
+    e.target.className === "id"
+      ? this.setState({ userid: e.target.value })
+      : this.setState({ userpw: e.target.value });
+    if (e.keyCode === 13) {
+      this.handleLogin();
+    }
   };
 
   render() {
@@ -48,18 +62,18 @@ class Login extends React.Component {
                   alt="instagram logo"
                 />
               </header>
-              <form onSubmit={this.handleLogin}>
+              <div className="login-box">
                 <input
                   type="email"
                   className="id"
                   placeholder="전화번호, 사용자 이름 또는 이메일"
-                  onChange={this.handleId}
+                  onKeyUp={this.handleInput}
                 />
                 <input
                   type="password"
                   className="pw"
                   placeholder="비밀번호"
-                  onChange={this.handlePw}
+                  onKeyUp={this.handleInput}
                 />
                 <button
                   type="submit"
@@ -73,7 +87,7 @@ class Login extends React.Component {
                 >
                   로그인
                 </button>
-              </form>
+              </div>
               <div className="or">
                 <div className="line"></div>
                 <span className="Text"> 또는 </span>
@@ -82,6 +96,24 @@ class Login extends React.Component {
               <div className="facebookLogIn">
                 <i className="fab fa-facebook-square"></i>
                 <span>Facebook으로 로그인</span>
+              </div>
+              <div
+                className={
+                  this.state.incorrectId
+                    ? "incorrect-visible"
+                    : "incorrect-invisible"
+                }
+              >
+                잘못된 아이디입니다. 다시 확인하세요.
+              </div>
+              <div
+                className={
+                  this.state.incorrectPw
+                    ? "incorrect-visible"
+                    : "incorrect-invisible"
+                }
+              >
+                잘못된 비밀번호 입니다. 다시 확인하세요.
               </div>
               <Link to="/forgetPw" className="forgot-box">
                 비밀번호를 잊으셨나요?

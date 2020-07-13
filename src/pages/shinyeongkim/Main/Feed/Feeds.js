@@ -1,60 +1,20 @@
 import React from "react";
-import { FaRegHeart } from "react-icons/fa";
-import { RiDeleteBinLine } from "react-icons/ri";
+import Feed from "./Feed";
 import "./Feeds.scss";
 
 class Feeds extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      commentList: [],
-      commentText: "",
-      userId: "aida_shin.y",
-    };
+    this.state = {};
   }
 
-  handleCommentText = (e) => {
-    this.setState({ commentText: e.target.value });
-  };
-
-  handleCommentUpload = (e) => {
-    e.preventDefault();
-    let comments = this.state.commentList;
-    comments = comments.concat(this.state.commentText);
-    this.setState({
-      commentText: "",
-      commentList: comments,
-    });
-  };
-
-  handleDeleteComment = (index) => {
-    const List = this.state.commentList;
-    List.splice(index, 1);
-    this.setState({ commentList: List });
-  };
-
   render() {
-    const comment = this.state.commentList.map((comment, i) => {
-      return (
-        <li className="comment" key={i}>
-          <div className="texts">
-            <span className="user__id">{this.state.userId}</span>
-            <span className="contents">{comment}</span>
-          </div>
-          <div className="heart-btn">
-            <RiDeleteBinLine
-              style={{ marginRight: "5px", cursor: "pointer" }}
-              onClick={() => this.handleDeleteComment(i)}
-            />
-            <FaRegHeart />
-          </div>
-        </li>
-      );
-    });
-
     return (
       <div className="Feeds_KSY">
-        <article className="feed">
+        {this.state.feedsContents.map((feed) => {
+          return <Feed feedContent={feed} />;
+        })}
+        {/* <article className="feed">
           <header className="header">
             <div className="user">
               <img
@@ -105,7 +65,6 @@ class Feeds extends React.Component {
                   src="http://bitly.kr/uacyfcqBYr"
                 />
                 <span className="about__like-user">
-                  {" "}
                   <span className="user__id">goodday</span>님 외 10명이
                   좋아합니다
                 </span>
@@ -311,7 +270,7 @@ class Feeds extends React.Component {
               </button>
             </form>
           </footer>
-        </article>
+        </article> */}
       </div>
     );
   }
