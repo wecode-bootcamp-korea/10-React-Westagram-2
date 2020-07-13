@@ -1,0 +1,151 @@
+.MainRight {
+  width: 350px;
+  margin-left: 30px;
+  justify-content: center;
+  background-color: #f8f9fa;
+
+  //1.자신의 프로필
+  .myinfo {
+    height: 80px;
+    display: flex;
+    padding-bottom: 10px;
+    margin: 10px 0px;
+
+    .myinfo-left {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: linear-gradient(to right, yellow, red);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0px 10px;
+
+      img {
+        width: 95%;
+        height: 95%;
+        border-radius: 50%;
+        border: 1px solid white;
+        object-fit: cover;
+      }
+    }
+
+    .myinfo-right {
+      width: 70%;
+      background-color: #f8f9fa;
+
+      .myinfo-right-1 {
+        height: 20px;
+        p {
+          padding-left: 5px;
+          font-weight: bold;
+        }
+      }
+
+      .myinfo-right-2 {
+        height: 35px;
+        p {
+          margin-top: 0px;
+          padding-left: 5px;
+          color: #005766;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  //2. 추천
+  .recommend {
+    width: 100%;
+    background-color: white;
+    border: 1px solid #e9ecef;
+    margin-bottom: 10px;
+
+    .recommend-nav {
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .recommend-nav-p1 {
+        padding-left: 10px;
+        font-weight: bold;
+        color: #adb5bd;
+      }
+      .recommend-nav-p2 {
+        padding-right: 10px;
+        font-weight: bold;
+      }
+    }
+
+    .recommend-row ul {
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      list-style: none;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 5px;
+
+        /*********추천 리스트 왼쪽********/
+        .li-left {
+          display: flex;
+
+          .recommend-profile {
+            /*border: 1px solid black;*/
+            width: 40px;
+            height: 40px;
+            border-radius: 70%;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .recommend-id {
+            padding: 5px 0px 0px 5px;
+            margin: 0;
+            line-height: 100%;
+            font-weight: bold;
+          }
+
+          .recommend-count {
+            padding: 0px 0px 0px 7px;
+            margin: 0;
+            line-height: 100%;
+            font-weight: bold;
+            color: #adb5bd;
+          }
+        }
+
+        /*********추천 리스트 오른쪽********/
+        .li-right {
+          padding-right: 5px;
+          font-weight: bold;
+          color: #4b89dc;
+        }
+      }
+    }
+  }
+
+  //3. 마지막 기타
+  .etc {
+    /*border: 1px solid black;*/
+    height: 200px;
+    width: 100%;
+
+    p {
+      color: #adb5bd;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.FragmentComment_DC {
+  padding-left: 5px;
+  position: relative;
+  height: auto;
+  width: 99%;
+
+  .input-container {
+    height: 34px;
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+    display: flex;
+
+    input {
+      width: 90%;
+      height: 100%;
+      border-right: 0px;
+      border-left: 1px solid #e9ecef;
+      border-bottom: 1px solid #e9ecef;
+      border-top: 1px solid #e9ecef;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      width: 58px;
+      height: 34px;
+      border-right: 1px solid #e9ecef;
+      border-left: 1px solid #e9ecef;
+      border-bottom: 1px solid #e9ecef;
+      border-top: 1px solid #e9ecef;
+      background: white;
+      color: #4b89dc;
+      &:hover {
+        cursor: pointer;
+        color: #e9ecef;
+      }
+    }
+  }
+}
