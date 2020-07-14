@@ -1,14 +1,34 @@
 import React, { Component } from "react";
-import Nav from "../Main/Nav";
-import "./login.scss";
 import { withRouter } from "react-router-dom";
+import Nav from "../Component/Nav/Nav";
+import "./login.scss";
 
 class Login extends Component {
-  goToMain() {
-    this.props.history.push("/main-yoonsiklee");
+  constructor() {
+    super();
+    this.state = {
+      userid: "",
+      userpw: "",
+    };
   }
+  goToMain = () => {
+    this.props.history.push("/Main-yoonsiklee");
+  };
+
+  IdInput = (e) => {
+    this.setState({
+      userid: e.target.value,
+    });
+  };
+
+  PwInput = (e) => {
+    this.setState({
+      userpw: e.target.value,
+    });
+  };
 
   render() {
+    const { userid, userpw } = this.state;
     return (
       <div className="Login_LYS">
         <Nav />
@@ -22,15 +42,21 @@ class Login extends Component {
                 type="text"
                 className="login-id"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
+                onChange={this.IdInput}
               />
               <input
                 type="password"
                 className="login-pw"
                 placeholder="비밀번호"
+                onChange={this.PwInput}
               />
               <button
-                className="login-button"
-                onClick={this.goToMain.bind(this)}
+                onClick={this.goToMain}
+                className={
+                  userid.includes("@") && userpw.length >= 5
+                    ? "button-Active"
+                    : "button-Default"
+                }
               >
                 로그인
               </button>

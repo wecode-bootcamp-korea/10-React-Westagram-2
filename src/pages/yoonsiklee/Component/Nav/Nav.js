@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import "./Nav.scss";
 
 class Nav extends Component {
-  goToLogin() {
+  goToLogin = () => {
     this.props.history.push("/login-yoonsiklee");
-  }
+  };
 
   render() {
     return (
@@ -23,7 +24,7 @@ class Nav extends Component {
             <img
               className="icon"
               src="/images/yoonsiklee/profile.png"
-              onClick={this.goToLogin.bind(this)}
+              onClick={this.goToLogin}
             />
           </div>
         </div>

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import "./Article.scss";
+import Comment from "../../Component/Comment/Comment";
 
 class Article extends Component {
   render() {
@@ -37,19 +39,7 @@ class Article extends Component {
               src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/bookmark.png"
             />
           </div>
-          <div className="feeds-text">
-            <a>
-              <a className="feeds-text-name">이윤식</a>님 외 10명이 좋아합니다.
-            </a>
-            <p />
-            <a>안녕하세요</a>
-            <div className="commnet-plus"></div>
-            <p className="feeds-text-time">42분 전</p>
-          </div>
-          <div className="comment-container">
-            <input type="text" className="comment" placeholder="댓글 달기..." />
-            <button className="comment-button">게시</button>
-          </div>
+          <Comment />
         </div>
       </article>
     );

@@ -1,0 +1,42 @@
+.nav_LYS {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid rgb(200, 200, 200);
+  z-index: 99;
+  background-color: white;
+  padding: 5px;
+
+  .nav_container {
+    width: 930px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+
+    .logo_container {
+      display: flex;
+      align-items: center;
+
+      .logo_image {
+        width: 103px;
+        height: 29px;
+      }
+    }
+
+    .search {
+      width: 215px;
+      height: 28px;
+      text-align: center;
+      border: 1px solid rgb(200, 200, 200);
+      background-color: rgb(249, 249, 249);
+      font-size: 15px;
+    }
+
+    .icon {
+      width: 25px;
+      margin: 5px 10px 5px;
+    }
+  }
+}
