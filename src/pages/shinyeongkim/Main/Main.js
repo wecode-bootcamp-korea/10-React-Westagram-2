@@ -50,7 +50,7 @@ class Main extends React.Component {
           },
           commentedTexts: {
             userId: "fatou",
-            text: "C'est minon!",
+            text: "C'est mignon!",
           },
         },
         {
