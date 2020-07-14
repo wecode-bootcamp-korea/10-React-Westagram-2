@@ -1,143 +1,115 @@
 import React from "react";
 import "./Stories.scss";
+import { FaObjectUngroup } from "react-icons/fa";
 
 class Stories extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      contents: [
+        {
+          id: "fatou",
+          img: {
+            imgSrc: "/images/shinyeongkim/avatar1.jpg",
+            imgAlt: "fatou의 프로필사진",
+          },
+        },
+        {
+          id: "ibrahima",
+          img: {
+            imgSrc: "/images/shinyeongkim/avatar2.jpg",
+            imgAlt: "ibrahima의 프로필사진",
+          },
+        },
+        {
+          id: "lemondefr",
+          img: {
+            imgSrc: "http://bitly.kr/cR60O74QHzq",
+            imgAlt: "lemondefr의 프로필사진",
+          },
+        },
+        {
+          id: "ted",
+          img: {
+            imgSrc: "http://bitly.kr/kxJAIN3q67L",
+            imgAlt: "ted의 프로필사진",
+          },
+        },
+        {
+          id: "henryl89",
+          img: {
+            imgSrc: "http://bitly.kr/FzgjjhkFbdq",
+            imgAlt: "henryl89의 프로필사진",
+          },
+        },
+        {
+          id: "yoonjujang",
+          img: {
+            imgSrc: "http://bitly.kr/mipSBb1FDwa",
+            imgAlt: "yoonjujang의 프로필사진",
+          },
+        },
+        {
+          id: "konbini",
+          img: {
+            imgSrc: "http://bitly.kr/AmfY3xpxuEG",
+            imgAlt: "konbini의 프로필사진",
+          },
+        },
+        {
+          id: "franciscoblancophotos",
+          img: {
+            imgSrc: "http://bitly.kr/I8GSoKwKHWh",
+            imgAlt: "franciscoblancophotos의 프로필사진",
+          },
+        },
+        {
+          id: "jung.sia",
+          img: {
+            imgSrc: "http://bitly.kr/yHowiSjCQxf",
+            imgAlt: "jung.sia의 프로필사진",
+          },
+        },
+        {
+          id: "tyleroninsta",
+          img: {
+            imgSrc: "http://bitly.kr/5Sl7CwYI0W5",
+            imgAlt: "tyleroninsta의 프로필사진",
+          },
+        },
+        {
+          id: "bbclearningenglish",
+          img: {
+            imgSrc: "http://bitly.kr/t8dFXp7Gunj",
+            imgAlt: "bbclearningenglish의 프로필사진",
+          },
+        },
+      ],
+    };
+  }
+
   render() {
     return (
       <div className="Stories_KSY">
         <ul className="list">
-          <li className="story">
-            <div className="mark">
-              <div className="line">
-                <img
-                  alt="fatou님의 프로필사진"
-                  className="user__img"
-                  src="/images/shinyeongkim/avatar1.jpg"
-                />
+          {this.state.contents.map((content) => (
+            <li className="story">
+              <div className="mark">
+                <div className="line">
+                  <img
+                    alt={content.img.imgAlt}
+                    className="user__img"
+                    src={content.img.imgSrc}
+                  />
+                </div>
               </div>
-            </div>
-            <span className="user__id">fatou</span>
-          </li>
-          <li className="story">
-            <div className="mark">
-              <div className="line">
-                <img
-                  alt="ibrahima님의 프로필사진"
-                  className="user__img"
-                  src="/images/shinyeongkim/avatar2.jpg"
-                />
-              </div>
-            </div>
-            <span className="user__id">ibrahima</span>
-          </li>
-          <li className="story">
-            <div className="mark">
-              <div className="line">
-                <img
-                  alt="lemondefr님의 프로필사진"
-                  className="user__img"
-                  src="http://bitly.kr/cR60O74QHzq"
-                />
-              </div>
-            </div>
-            <span className="user__id">lemondefr</span>
-          </li>
-          <li className="story">
-            <div className="mark">
-              <div className="line">
-                <img
-                  alt="lemondefr님의 프로필사진"
-                  className="user__img"
-                  src="http://bitly.kr/kxJAIN3q67L"
-                />
-              </div>
-            </div>
-            <span className="user__id">ted</span>
-          </li>
-          <li className="story">
-            <div className="mark">
-              <div className="line">
-                <img
-                  alt="lemondefr님의 프로필사진"
-                  className="user__img"
-                  src="http://bitly.kr/FzgjjhkFbdq"
-                />
-              </div>
-            </div>
-            <span className="user__id">henryl89</span>
-          </li>
-          <li className="story">
-            <div className="mark">
-              <div className="line">
-                <img
-                  alt="lemondefr님의 프로필사진"
-                  className="user__img"
-                  src="http://bitly.kr/mipSBb1FDwa"
-                />
-              </div>
-            </div>
-            <span className="user__id">yoonjujang</span>
-          </li>
-          <li className="story">
-            <div className="mark">
-              <div className="line">
-                <img
-                  alt="lemondefr님의 프로필사진"
-                  className="user__img"
-                  src="http://bitly.kr/AmfY3xpxuEG"
-                />
-              </div>
-            </div>
-            <span className="user__id">konbini</span>
-          </li>
-          <li className="story">
-            <div className="mark">
-              <div className="line">
-                <img
-                  alt="lemondefr님의 프로필사진"
-                  className="user__img"
-                  src="http://bitly.kr/I8GSoKwKHWh"
-                />
-              </div>
-            </div>
-            <span className="user__id">franciscoblancophotos</span>
-          </li>
-          <li className="story">
-            <div className="mark">
-              <div className="line">
-                <img
-                  alt="lemondefr님의 프로필사진"
-                  className="user__img"
-                  src="http://bitly.kr/yHowiSjCQxf"
-                />
-              </div>
-            </div>
-            <span className="user__id">jung.sia</span>
-          </li>
-          <li className="story">
-            <div className="mark">
-              <div className="line">
-                <img
-                  alt="lemondefr님의 프로필사진"
-                  className="user__img"
-                  src="http://bitly.kr/5Sl7CwYI0W5"
-                />
-              </div>
-            </div>
-            <span className="user__id">tyleroninsta</span>
-          </li>
-          <li className="story">
-            <div className="mark">
-              <div className="line">
-                <img
-                  alt="lemondefr님의 프로필사진"
-                  className="user__img"
-                  src="http://bitly.kr/t8dFXp7Gunj"
-                />
-              </div>
-            </div>
-            <span className="user__id">bbclearningenglish</span>
-          </li>
+              <span className="user__id">
+                {content.id.length > 10
+                  ? `${content.id.slice(0, 9)}...`
+                  : content.id}
+              </span>
+            </li>
+          ))}
         </ul>
       </div>
     );
