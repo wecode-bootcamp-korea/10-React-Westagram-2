@@ -1,0 +1,33 @@
+//1. 스토리 부분
+.Story_DC {
+  width: 600px;
+  height: 120px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border: 1px solid #e9ecef;
+  background-color: white;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .story-container {
+    width: 1000px;
+    height: 80px;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    border: 1px e9ecef solid;
+    background-color: linear-gradient(to right, yellow, red, purple, blue);
+
+    ul {
+      padding-left: 0px;
+      list-style: none;
+    }
+
+    ul li {
+      float: left;
+    }
+  }
+}

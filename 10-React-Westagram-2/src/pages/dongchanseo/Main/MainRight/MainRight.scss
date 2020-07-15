@@ -1,0 +1,18 @@
+.MainRight {
+  width: 350px;
+  margin-left: 30px;
+  justify-content: center;
+  background-color: #f8f9fa;
+
+  //3. 마지막 기타
+  .etc {
+    /*border: 1px solid black;*/
+    height: 200px;
+    width: 100%;
+
+    p {
+      color: #adb5bd;
+      font-weight: bold;
+    }
+  }
+}
