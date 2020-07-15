@@ -11,8 +11,22 @@ class Login extends Component {
       userpw: "",
     };
   }
+
   goToMain = () => {
-    this.props.history.push("/Main-yoonsiklee");
+    /* 백엔드 통신시
+    fetch("url", {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.userid,
+        password: this.state.userpw,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        localStorage.setItem("access_token", res.access_token);
+        this.props.history.push("/main-yoonsiklee"");
+      }); */
+    this.props.history.push("/main-yoonsiklee");
   };
 
   IdInput = (e) => {

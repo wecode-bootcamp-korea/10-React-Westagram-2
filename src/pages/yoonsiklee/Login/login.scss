@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     margin: 100px auto 0;
+
     .container {
       position: fixed;
       display: flex;
@@ -49,10 +50,12 @@
           font-weight: bold;
           margin-top: 10px;
         }
+
         .button-Default {
           background-color: skyblue;
           pointer-events: none;
         }
+
         .button-Active {
           background-color: blue;
           pointer-events: auto;

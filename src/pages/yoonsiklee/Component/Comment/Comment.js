@@ -61,7 +61,6 @@ class Comment extends Component {
             placeholder="댓글 달기..."
             onChange={this.ChangeInput}
             onKeyPress={this.EnterAddComment}
-            value={this.state.userInput}
           />
           <button className="comment-button" onClick={this.clickAddComment}>
             게시
