@@ -6,8 +6,31 @@
 - 로그인 버튼 활성화 기능 구현(예시)
 		 
 ## 수정 사항들 자세한 내용
-(여기에 수정 사항에 대한 자세한 내용을 작성해 주세요.)
-- id '@' 포함, pw 5 글자 이상 입력 시 버튼 활성화(예시)
+1. 첫 수정 사항 _ 20.07.13 11:00 am [ 멘토님 리뷰 부분 ]
+index.html 불필요한 주석 전부 삭제 : index.html
+import 순서 변경 : dongchanseo/Login/Login.js, main.js
+인라인 스타일 수정 : dongchanseo/Login/Login.js
+
+2. 두번째 수정 사항 _ 20.07.13 12:00 pm
+login.js : 아이디 영문/숫자만 입력하도록 수정 완료
+login.scss : 아이디 비밀번호 조건에 따라 버튼 활성화 & 비활성화 적용
+
+3. 세번째 수정 사항 _ 20.07.13 15:00 pm
+메인 페이지 컴포넌트 분리 : 현재 Story부분 분리 (MainLeft -> Story)
+Story 컴포넌트 내부에서 분리 (MainLeft -> Story -> Profile)
+각 해당 컴포넌트 sass 분리 및 적용 (MainLeft.scss,0 Story.scss, Profile.scss)
+Story 리스트 적용
+
+4. 네번째 수정 사항 _ 20.07.13 20:00 pm 
+메인페이지 왼쪽 수정
+스토리, 게시글(댓글, 좋아요) 컴포넌트 및 스타일 분리/수정 (MainLeft -> Feed-> Comment/Heart)
+스토리 : Story & Profile 구분 수정
+댓글 추가 삭제 기능 완료
+
+5. 다섯번째 수정 사항 _ 20.07.15 20:00 pm
+최종 수정 
+컴포넌트 구분..
+현재 PR이 안됨 
 
 ## 기타 질문 및 특이 사항
 (궁금한 사항들, 하면서 느낀 점들 공유해주실 것이 있으면 자유롭게 작성해 주세요.)
