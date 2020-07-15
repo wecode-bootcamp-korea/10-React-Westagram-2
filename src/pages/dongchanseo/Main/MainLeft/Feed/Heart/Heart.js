@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Heart.scss";
 
 class Heart extends Component {
+  state = {};
   render() {
     return (
       <>

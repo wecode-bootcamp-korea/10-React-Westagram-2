@@ -5,7 +5,7 @@ import "./Login.scss";
 class Login extends Component {
   state = {
     email: "",
-    pwd: "",
+    password: "",
   };
 
   handleInput = (e) => {
@@ -26,7 +26,10 @@ class Login extends Component {
 
   handleCheckBtnActive = () => {
     // className으로 함수 이벤트 실행 가능
-    if (this.state.email.indexOf("@") !== -1 && this.state.pwd.length > 5) {
+    if (
+      this.state.email.indexOf("@") !== -1 &&
+      this.state.password.length > 5
+    ) {
       return true;
     } else {
       return false;
@@ -34,16 +37,20 @@ class Login extends Component {
   };
 
   handleloginClick = () => {
-    /*
-      비동기 통신 작업 구간
-    */
-
-    let id = this.state.email.split("@");
-    sessionStorage.setItem("id", id[0]);
-
-    alert("로그인 되었습니다.");
-
-    this.props.history.push("/main-dongchanseo");
+    const url = "http://10.58.7.161:8000/user/sign-in";
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) =>
+        res.success !== ""
+          ? sessionStorage.setItem("tokken", res.success)
+          : this.props.history.push("/main-dongchanseo")
+      );
   };
 
   render() {
@@ -63,10 +70,10 @@ class Login extends Component {
               />
               <input
                 type="password"
-                id="pwd"
+                id="password"
                 placeholder="비밀번호"
                 onChange={this.handleInput}
-                value={this.state.pwd}
+                value={this.state.password}
               />
               <button
                 className={
