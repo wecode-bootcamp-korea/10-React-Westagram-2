@@ -21,21 +21,26 @@ class Login extends React.Component {
   }
 
   handleLogin = (e) => {
-    if (
-      this.state.id === this.state.userid &&
-      this.state.pw === this.state.userpw
-    ) {
+    const { userid, userpw } = this.state;
+    //백엔드와 통신할 경우
+    // fetch("http://10.58.0.238:8000/user/sign-in/", {
+    //   method: "POST",
+    //   body: JSON.stringify({
+    //     email: userid, // 백엔드랑 key값 동일화
+    //     password: userpw,
+    //   }),
+    // })
+    //   .then((res) => res.json())
+    //   .then((res) => this.props.history.push("/main-shinyeongkim"))
+    //   .catch((err) => console.log(err));
+
+    //백엔드와 통신하지 않고 자체적으로 로그인 할 경우
+    if (this.state.id === userid && this.state.pw === userpw) {
       this.props.history.push("/main-shinyeongkim");
       this.setState({ incorrectId: false, incorrectPw: false });
-    } else if (
-      this.state.id !== this.state.userid &&
-      this.state.pw === this.state.userpw
-    ) {
+    } else if (this.state.id !== userid && this.state.pw === userpw) {
       this.setState({ incorrectId: true, incorrectPw: false });
-    } else if (
-      this.state.id === this.state.userid &&
-      this.state.pw !== this.state.userpw
-    ) {
+    } else if (this.state.id === userid && this.state.pw !== userpw) {
       this.setState({ incorrectId: false, incorrectPw: true });
     }
   };
@@ -50,6 +55,7 @@ class Login extends React.Component {
   };
 
   render() {
+    const { userid, userpw, incorrectId, incorrectPw } = this.state;
     return (
       <div className="Login_KSY">
         <main className="login__main">
@@ -79,8 +85,7 @@ class Login extends React.Component {
                   type="submit"
                   onClick={this.handleLogin}
                   className={
-                    this.state.userid.includes("@") &&
-                    this.state.userpw.length >= 5
+                    userid.includes("@") && userpw.length >= 5
                       ? "activatedBtn"
                       : "unActivatedBtn"
                   }
@@ -99,18 +104,14 @@ class Login extends React.Component {
               </div>
               <div
                 className={
-                  this.state.incorrectId
-                    ? "incorrect-visible"
-                    : "incorrect-invisible"
+                  incorrectId ? "incorrect-visible" : "incorrect-invisible"
                 }
               >
                 잘못된 아이디입니다. 다시 확인하세요.
               </div>
               <div
                 className={
-                  this.state.incorrectPw
-                    ? "incorrect-visible"
-                    : "incorrect-invisible"
+                  incorrectPw ? "incorrect-visible" : "incorrect-invisible"
                 }
               >
                 잘못된 비밀번호 입니다. 다시 확인하세요.

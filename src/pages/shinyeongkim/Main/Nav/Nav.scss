@@ -1,3 +1,5 @@
+$border-line: 1px solid #dbdbdb;
+
 .Nav_KSY {
   width: 100%;
   height: 50px;
@@ -5,7 +7,7 @@
   top: 0;
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid #dbdbdb;
+  border-bottom: $border-line;
   background-color: #ffffff;
   z-index: 1;
 
@@ -48,7 +50,7 @@
           width: 215px;
           height: 30px;
           padding: 0 25px;
-          border: 1px solid #dbdbdb;
+          border: $border-line;
           border-radius: 3px;
           background-color: #fafafa;
           text-align: center;

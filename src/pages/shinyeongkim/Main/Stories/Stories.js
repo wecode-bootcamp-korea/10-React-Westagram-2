@@ -1,6 +1,5 @@
 import React from "react";
 import "./Stories.scss";
-import { FaObjectUngroup } from "react-icons/fa";
 
 class Stories extends React.Component {
   constructor(props) {

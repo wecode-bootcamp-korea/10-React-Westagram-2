@@ -1,10 +1,12 @@
+$border-line: 1px solid #dbdbdb;
+
 .SearchDropDown_KSY {
   width: 241px;
   max-height: 362px;
   position: absolute;
   top: 55px;
   right: 0 auto;
-  border: 1px solid #dbdbdb;
+  border: $border-line;
   border-radius: 3px;
   visibility: hidden;
   overflow: hidden;
@@ -19,7 +21,7 @@
     background-color: #ffffff;
 
     &:not(:last-child) {
-      border-bottom: 1px solid #dbdbdb;
+      border-bottom: $border-line;
     }
 
     &:hover {
