@@ -11,9 +11,21 @@ class Login extends Component {
   onLoginFormSubmit = (event) => {
     event.preventDefault();
     const { id, pw } = this.state;
-    const isValid = id.length !== 0 && pw.length !== 0; 
+    const loginInfo = { email: id, password: pw }; 
 
-    if (isValid) this.props.history.push('/main-junchoi');
+    // sign-in 
+    const isValid = id.length !== 0 && pw.length !== 0; 
+    if (isValid) {
+      fetch('http://10.58.5.147:8000/user/sign-in', {
+        method: 'POST',
+        body: JSON.stringify(loginInfo)
+      })
+      .then(res => res.json()) 
+      .then(res => {
+        if(res.access_token) this.props.history.push('/main-junchoi');
+      }); 
+    }
+
   }
 
   onInputsChange = (event) => {

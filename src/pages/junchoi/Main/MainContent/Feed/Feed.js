@@ -20,6 +20,17 @@ class Feed extends Component {
     const userName = faker.internet.userName().slice(0, 6);
 
     const { comments, commentInput } = this.state; 
+    // fetch('http://10.58.5.147:8000/posting/comment', {
+    //   method: 'POST',
+    //   headers: new Headers({
+    //     'Authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMH0.omeYuNzOh7jvLp3btm-_TuLmXhNMO_rFAP8wYlCdQVw'
+    //   }),
+    //   body: JSON.stringify({
+    //     post_id: 2, 
+    //     text: commentInput 
+    //   })
+    // }).then((res) => res.json()).then((res) => console.log(res));
+
     const newComments = [...comments, {userName, content: commentInput}];
 
     this.setState({

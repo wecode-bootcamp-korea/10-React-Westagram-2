@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
 import './StoryModal.scss';
 
+const body = document.querySelector('#body');
 class StoryModal extends Component {
+  state = { status: false };
+
+  componentDidMount() {
+    body.setAttribute("style", "overflow: hidden;");
+    this.setState({ status: true });
+  }
+
+  componentWillUnmount() {
+    body.removeAttribute("style");
+    this.setState({ status: false });
+  }
 
   render() {
     const { storyModal } = this.props;
@@ -27,8 +39,8 @@ class StoryModal extends Component {
               <i className="ellipsis horizontal icon"></i>
             </div>
           </div>
-          <div className="status-bar">
-          </div>
+          <div className="status-bar"></div>
+          <div className={`progress-bar ${this.state.status ? 'active' : ''}`}></div>
           <img className="main-image" src={`/images/junchoi/story${getRandomIntInclusive(1, 3)}.jpg`} alt='story-main'/>
           <div className="bottom">
             <div className="area-wrapper">

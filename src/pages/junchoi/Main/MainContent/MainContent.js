@@ -7,7 +7,7 @@ import Dimmer from './Dimmer/Dimmer';
 import './MainContent.scss';
 
 class MainContent extends Component {
-  state = { stories: [], feeds: [], storyModalStatus : false, storyModal: null };
+  state = { stories: [], feeds: [], storyModalStatus : false, storyModal: null, timerId: null };
 
   componentDidMount() {
     const makeStories = () => {
@@ -32,7 +32,8 @@ class MainContent extends Component {
         image: `/images/junchoi/feed${getRandomIntInclusive(1, 3)}.jpg`,
         paragraph: faker.lorem.paragraph(),
         hashes: myRepeat(faker.lorem.word, 3),
-        comments: myRepeat(makeComments, 2)
+        comments: myRepeat(makeComments, 2),
+        post_id: 2 
       };
     };
 
@@ -54,14 +55,17 @@ class MainContent extends Component {
 
     const stories = myRepeat(makeStories, 20);
     const feeds = myRepeat(makeFeeds, 15);
+
+
     this.setState({ stories, feeds });
   }
 
-  onStoryClick = (story) => {
-    this.setState({ storyModalStatus: true, storyModal: story });    
+  onStoryClick = (storyModal, timerId) => {
+    this.setState({ storyModalStatus: true, storyModal, timerId });    
   }
 
   modalOff = () => {
+    clearTimeout(this.state.timerId);
     this.setState({ storyModalStatus: false, storyModal: null});
   }
 
@@ -72,7 +76,11 @@ class MainContent extends Component {
         {this.state.storyModalStatus && <Dimmer modalOff={this.modalOff} /> }
         <div className="main-stories">
           {this.state.stories.map((story, index) => {
-            return <StoryItem key={story.userName + index} story={story} onStoryClick={this.onStoryClick}/>
+            return <StoryItem key={story.userName + index} 
+                      story={story} 
+                      onStoryClick={this.onStoryClick}
+                      modalOff={this.modalOff}
+                   />
           })}
         </div>
         <div className="main-feeds">

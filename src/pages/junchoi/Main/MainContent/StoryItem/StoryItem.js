@@ -5,8 +5,11 @@ import './StoryItem.scss';
 class Story extends Component {
 
   onStoryImageClick = () => {
-    const { onStoryClick } = this.props;
-    onStoryClick(this.props.story);
+    const { onStoryClick, modalOff } = this.props;
+    const timerId = setTimeout(() => {
+      modalOff();
+    }, 3000);
+    onStoryClick(this.props.story, timerId);
   }
 
   render() {
