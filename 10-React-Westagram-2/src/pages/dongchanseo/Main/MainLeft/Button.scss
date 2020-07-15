@@ -1,0 +1,28 @@
+.Button {
+  height: 60px;
+  width: 60px;
+  left: 45%;
+  bottom: 5px;
+  border-radius: 50px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+
+  background-color: blue;
+  cursor: pointer;
+
+  //버튼 내부 크기
+  font-size: 80px;
+  color: white;
+
+  transition: 0.125s all ease-in;
+  &:hover {
+    transform: rotate(45deg);
+  }
+
+  &:active {
+    height: 80px;
+    width: 80px;
+  }
+}
