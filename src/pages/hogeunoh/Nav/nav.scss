@@ -26,7 +26,7 @@
         }
              
         .searchBox {
-            width: 215px;
+            width: 220px;
             height: 28px;
             border: 1px solid #DBDBDB;
             border-radius: 3px;
@@ -42,12 +42,8 @@
                 right: 125px;
             }
             
-            .searchImgFocus {
-                left: 5px;
-            }
-            
             .search {
-                width: 215px;
+                width: 200px;
                 height: 100%;
                 margin: 0 20px;
                 font-size: 13px;
@@ -55,10 +51,13 @@
                 outline: none;
                 background-color: #FAFAFA;
                 text-align:center;
-            }
-            
-            .searchFocus {
-                text-align:left;
+
+                &:focus{
+                    text-align:left;
+                }
+                &:focus ~.searchImg {
+                    left: 5px
+                }
             }
         }
             

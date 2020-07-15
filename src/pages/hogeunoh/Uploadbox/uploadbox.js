@@ -40,13 +40,13 @@ class Uploadbox extends React.Component {
             <div className="uploadBox">
                 <div className="uploadHeaderBox">
                     <div className="gradationMini">
-                        <img className="UHBprofile" alt="profile" src={img.src} />
+                        <img className="UHBprofile" alt="profile" src={img.large_cover_image} />
                     </div>
-                    <span>{img.name}</span>
+                    <span>{img.title}</span>
                     <img className="UHBdot" alt="dot" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/more.png" />
                 </div>
                 <div className="uploadPictureBox">
-                    <img alt="picure" src={img.src} />
+                    <img alt="picure" src={img.large_cover_image} />
                 </div>
                 <div className="pictureIconBox">
                     <img alt="love" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png" />

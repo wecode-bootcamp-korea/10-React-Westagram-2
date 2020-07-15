@@ -9,9 +9,9 @@ class Nav extends React.Component {
                     <div className="logoBox">
                         <img className="logoImg" alt="logo" src="/images/hogeunoh/logo_text.png"/>
                     </div>
-                    <div className="searchBox">
-                        <img className="searchImg" src="/images/hogeunoh/search.png"/>
+                    <div className="searchBox">                        
                         <input className="search" type="text" placeholder="검색"/>
+                        <img className="searchImg" src="/images/hogeunoh/search.png"/>
                     </div>
                     <div className="navIconBox">
                         <svg aria-label="홈" className="icon" fill="#262626" height="22" viewBox="0 0 48 48" width="22">

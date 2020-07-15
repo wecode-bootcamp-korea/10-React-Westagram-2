@@ -21,17 +21,26 @@ class Login extends React.Component {
         this.setState({ pw: e.target.value })
     }
 
-    goToMain() {
-        let id = this.state.id 
+    goToMain = () => {
+        /* let id = this.state.id 
         let pw = this.state.pw
         if (id.includes('@') && pw.length >= 5) {
-            alert('성공')
+            alert('성공')  
             this.props.history.push('/main-hogeunoh');
             return;
         } else {
             alert('잘못 입력했습니다')
-        }
-      }
+        } */
+        fetch("http://10.58.4.159:8000/user/signin", {
+            method: "POST",
+            body: JSON.stringify({
+                email: this.state.id,
+                password: this.state.pw,
+                }),
+            })
+        .then(res => res.json())
+        .then(res => console.log(res))
+    };
 
     render() {
         return (
@@ -49,7 +58,6 @@ class Login extends React.Component {
                         </div>
                         <div>
                             <button 
-                                /* style={{backgroundColor: this.state.id && this.state.pw ? "blue":"#B2DFFC"}}  */
                                 onClick={this.goToMain.bind(this)} 
                                 className={this.state.id && this.state.pw ? "loginButton blue":"loginButton skyblue"}
                                 type="button">
