@@ -1,0 +1,150 @@
+.Feed_J {
+  margin-bottom: 40px;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(var(--b6a,219,219,219),1);
+  border-radius: 3px;
+
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 20px;
+
+    img {
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(var(--ca6,219,219,219),1);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .id {
+      width: 536px;
+      margin-left: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .dots {
+      cursor: pointer;
+    }
+  }
+
+  .middle-icons {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px 5px 20px;
+
+    .icons {
+      cursor: pointer;
+    }
+
+    .space {
+      width: 340px;
+    }
+  }
+
+  .likes {
+    padding: 5px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .user-id {
+    padding: 5px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .paragraph {
+    padding: 0 20px;
+    font-size: 14px;
+    line-height: 130%;
+
+    .hash{
+      font-size: 14px;
+      color: rgba(var(--fe0,0,55,107),1);
+      cursor: pointer;
+    }
+  }
+
+  .comments {
+    padding: 10px 0 5px 3px;
+
+    .comment {
+      .user-id {
+        padding: 5px 20px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .content-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        .content {
+          width: 500px;
+          padding: 0px 0px 0px 20px;
+          font-size: 14px;
+        }
+
+        button {
+          margin: 0px 20px 0px 0px;
+          background: none;
+          border: none;
+          color: #8E8E8E;
+          font-size: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .time {
+    padding: 10px 20px;
+    font-size: 10px;
+    color: #8E8E8E;
+    line-height: 130%;
+  }
+
+  .comment-input-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+    padding: 0 20px;
+    border-top: 1px solid rgba(var(--ca6,219,219,219),1);
+
+    .text {
+      width: 90%;
+      border: none;
+      resize: none;
+      word-wrap: break-word;
+    }
+    
+    .post {
+      background: none;
+      border: none;
+      font-weight: 600;
+      font-size: 14px;
+      color: #C4E0FD;
+      pointer-events: none;
+      cursor: pointer;
+    }
+
+    .post.active {
+      background: none;
+      border: none;
+      font-weight: 600;
+      font-size: 14px;
+      color: #0095f6;
+      pointer-events: visible;
+      cursor: pointer;
+    }
+  }
+}
