@@ -1,0 +1,19 @@
+.feed_ho {
+    width: 614px;
+    margin: 0 28px 0 0;
+
+    .storyBox {
+        height: 118px;
+        margin: 0 0 24px;
+        padding: 16px 0 0 10px;
+        border: 1px solid #DBDBDB;
+        border-radius: 3px;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x : auto;
+    }
+    
+    .storyBox::-webkit-scrollbar {
+        display: none;
+    }
+}

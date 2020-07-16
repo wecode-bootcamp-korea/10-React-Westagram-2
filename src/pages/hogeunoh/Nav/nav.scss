@@ -1,0 +1,77 @@
+.nav_ho {
+    z-index: 10;
+    width: 100%;
+    position: fixed;
+    border-bottom: 1px solid #DBDBDB;
+    background-color: white;
+
+    .headerBox {
+        width: 975px;
+        height: 54px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+
+        .logoBox {
+            width: 360px;
+            height: 36;
+            display: flex;
+            align-items: center;
+
+            .logoImg {
+                width: 103px;
+                height: 29px;
+            }
+        }
+             
+        .searchBox {
+            width: 220px;
+            height: 28px;
+            border: 1px solid #DBDBDB;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            background-color: #FAFAFA;
+            position: relative;
+
+            .searchImg {
+                width: 10px;
+                position: absolute;
+                right: 125px;
+            }
+            
+            .search {
+                width: 200px;
+                height: 100%;
+                margin: 0 20px;
+                font-size: 13px;
+                border: none;
+                outline: none;
+                background-color: #FAFAFA;
+                text-align:center;
+
+                &:focus{
+                    text-align:left;
+                }
+                &:focus ~.searchImg {
+                    left: 5px
+                }
+            }
+        }
+            
+        .navIconBox {
+            width: 360px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .icon {
+                height: 24px;
+                margin: 9px;
+            }
+        }     
+    }
+}
