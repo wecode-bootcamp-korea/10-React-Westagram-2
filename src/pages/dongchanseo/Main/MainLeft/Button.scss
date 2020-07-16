@@ -1,21 +1,26 @@
 .Button {
+  //1. 크기
   height: 60px;
   width: 60px;
+
+  //2. 위치
   left: 45%;
   bottom: 5px;
-  border-radius: 50px;
   position: fixed;
-  display: flex;
-  align-items: center;
-  justify-items: center;
 
+  //3. 형태
+  border-radius: 50px;
+
+  //4. 색
   background-color: blue;
+
   cursor: pointer;
 
-  //버튼 내부 크기
-  font-size: 80px;
+  //5. 버튼 내부 내용 크기 및 색
+  font-size: 60px;
   color: white;
 
+  // 6. 애니메이션으로 내용 변경
   transition: 0.125s all ease-in;
   &:hover {
     transform: rotate(45deg);
