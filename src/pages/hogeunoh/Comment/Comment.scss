@@ -1,0 +1,28 @@
+.commentBox {
+    margin: 0 16px;
+    font-size: 14px;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .name {
+        font-size: 14px;
+        font-weight: bold;
+        color: black;
+        margin-right: 5px;
+    }
+    
+    .delete {
+        position: absolute;
+        right: 20px;
+        margin: 5px;
+        cursor: pointer;
+    }
+
+    img {
+        width: 13px;
+        position: absolute;
+        right: 0;
+        margin: 5px;
+    }
+}
