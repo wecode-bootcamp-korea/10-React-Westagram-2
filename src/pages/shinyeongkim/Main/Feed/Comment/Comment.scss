@@ -1,0 +1,67 @@
+.Comment_KSY {
+  .user__id {
+    margin-right: 5px;
+  }
+
+  .comment {
+    margin: 5px 0 0;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:last-child {
+      margin-bottom: 5px;
+    }
+
+    .texts {
+      display: flex;
+      align-items: center;
+    }
+
+    .heart-btn i {
+      cursor: pointer;
+    }
+  }
+
+  .time {
+    padding: 0 16px;
+    font-size: 12px;
+    color: #9b9b9b;
+  }
+
+  .comment-writing {
+    height: 56px;
+    padding: 20px 16px;
+    margin-top: 10px;
+    border-top: 1px solid #dbdbdb;
+
+    form {
+      display: flex;
+      justify-content: space-between;
+
+      input {
+        width: 557px;
+        border: none;
+        outline: none;
+        opacity: 0.5;
+      }
+
+      .unActivatedBtn {
+        border: none;
+        background-color: inherit;
+        outline: none;
+        color: #cce6fd;
+        padding: 0;
+      }
+
+      .activatedBtn {
+        border: none;
+        background-color: inherit;
+        outline: none;
+        color: #0095f6;
+        padding: 0;
+      }
+    }
+  }
+}

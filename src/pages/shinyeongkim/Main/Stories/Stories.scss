@@ -1,0 +1,64 @@
+.Stories_KSY {
+  height: 115px;
+  padding: 16px 0px 16px 15px;
+  margin-bottom: 24px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #ffffff;
+  overflow: hidden;
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+
+  .list {
+    display: flex;
+
+    .story {
+      width: 70px;
+      height: 80px;
+      margin-right: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .mark {
+        width: 66px;
+        height: 66px;
+        border-radius: 50%;
+        margin-bottom: 5px;
+
+        .line {
+          width: 66px;
+          height: 66px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-image: linear-gradient(to bottom, #cb368f, #f99f5b);
+
+          img {
+            width: 62px;
+            height: 62px;
+            border: 2px solid white;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+  .user__id {
+    font-size: 12px;
+    font-weight: 400;
+  }
+}

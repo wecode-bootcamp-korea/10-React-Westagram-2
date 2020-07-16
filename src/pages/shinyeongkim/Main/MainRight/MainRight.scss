@@ -1,0 +1,136 @@
+.MainRight_KSY {
+  width: 295px;
+
+  section {
+    display: block;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+
+  .box {
+    position: fixed;
+    width: 295px;
+
+    .user-information {
+      width: 295px;
+      height: 100px;
+      padding: 20px 5px;
+      display: flex;
+
+      img {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        margin-right: 15px;
+        border: 1px solid #dbdbdb;
+      }
+
+      .user__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .user__name {
+          margin-top: 8px;
+          opacity: 0.5;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .recommends {
+      width: 295px;
+      height: 255px;
+      margin-bottom: 15px;
+      border: none;
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .title {
+          font-weight: 600;
+          opacity: 0.4;
+        }
+
+        .viewAll {
+          font-weight: 600;
+          cursor: pointer;
+        }
+      }
+
+      .user__list {
+        margin-top: 10px;
+
+        li {
+          margin-bottom: 15px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          &:first-child {
+            margin-top: 15px;
+          }
+
+          .user {
+            display: flex;
+
+            img {
+              width: 32px;
+              height: 32px;
+              margin-right: 10px;
+              border-radius: 50%;
+              border: 1px solid #dbdbdb;
+            }
+
+            .user__about {
+              display: flex;
+              flex-direction: column;
+
+              .id {
+                margin-bottom: 5px;
+              }
+
+              .state {
+                opacity: 0.5;
+              }
+            }
+          }
+
+          .follow {
+            font-weight: 600;
+            color: #0095f6;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .footer {
+      font-size: 11px;
+      opacity: 0.3;
+
+      ul {
+        margin-top: 35px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        list-style: none;
+
+        li {
+          margin-right: 5px;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
