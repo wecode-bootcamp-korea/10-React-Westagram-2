@@ -1,0 +1,47 @@
+.follow_profile {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 3px 0;
+
+  .title_img_radius img {
+    height: 40px;
+    border-radius: 70%;
+  }
+
+  .follow_form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+
+    .sidebar_profile_name {
+      color: #8e8e8e;
+      padding-top: 2px;
+    }
+
+    .follow_id {
+      font-weight: bold;
+      color: black;
+    }
+
+    .follow_id,
+    .follow_subid {
+      font-size: 12px;
+      text-decoration: none;
+    }
+  }
+
+  .follow_btn {
+    position: absolute;
+    right: 0px;
+    top: 17px;
+  }
+
+  .follow_btn button {
+    all: unset;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #0095f6;
+  }
+}

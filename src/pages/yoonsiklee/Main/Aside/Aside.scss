@@ -1,0 +1,127 @@
+.aside_LYS {
+  margin-top: 75px;
+  width: 290px;
+
+  .main_right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .sidebar_profile {
+      display: flex;
+      align-items: center;
+
+      .sidebar_img_radius img {
+        width: 55px;
+        border-radius: 70%;
+        margin-right: 10px;
+      }
+    }
+    .sidebar_profile_id_contaner {
+      display: flex;
+      flex-direction: column;
+
+      .sidebar_profile_name,
+      .sidebar_profile_id {
+        text-decoration: none;
+        color: black;
+      }
+
+      .sidebar_profile_name {
+        color: #8e8e8e;
+        padding-top: 2px;
+      }
+    }
+
+    .story {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+      padding-bottom: 13px;
+
+      .story_msg {
+        font-size: 13px;
+        font-weight: 600;
+        color: #8e8e8e;
+      }
+      .view_all a {
+        font-size: 13px;
+        font-weight: bold;
+        color: #262626;
+        text-decoration: none;
+      }
+    }
+
+    .follow_profile {
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 3px 0;
+
+      .title_img_radius img {
+        height: 40px;
+        border-radius: 70%;
+      }
+
+      .follow_form {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+
+        .sidebar_profile_name {
+          color: #8e8e8e;
+          padding-top: 2px;
+        }
+
+        .follow_id {
+          font-weight: bold;
+          color: black;
+        }
+
+        .follow_id,
+        .follow_subid {
+          font-size: 12px;
+          text-decoration: none;
+        }
+      }
+      .follow_btn {
+        position: absolute;
+        right: 0px;
+        top: 17px;
+      }
+
+      .follow_btn button {
+        all: unset;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        color: #0095f6;
+      }
+    }
+    .footer_site {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 0;
+
+      .footer_list {
+        list-style: none;
+        padding-left: 6px;
+      }
+      .footer_list a {
+        width: 100%;
+        letter-spacing: -0.5px;
+        font-size: 10px;
+        color: #c7c7c7;
+      }
+    }
+
+    .footer_text {
+      font-size: 13px;
+      color: #c7c7c7;
+      letter-spacing: -0.5px;
+    }
+  }
+}
